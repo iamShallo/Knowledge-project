@@ -1,6 +1,6 @@
 # Knowledge-project
 
-# Group members 
+## Group members 
 Francesco Caldarelli - 132380 
 Edoardo Papa - 131313
 
