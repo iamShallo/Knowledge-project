@@ -1,0 +1,2083 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<semantic:definitions xmlns:semantic="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns:triso="http://www.trisotech.com/2015/triso/modeling" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:trisodmn="http://www.trisotech.com/2016/triso/dmn" xmlns:feel="https://www.omg.org/spec/DMN/20240513/FEEL/" xmlns:tc="http://www.omg.org/spec/DMN/20160719/testcase" xmlns:drools="http://www.drools.org/kie/dmn/1.1" xmlns:openapi="https://openapis.org/omg/extension/1.0" xmlns:boxedext="https://www.trisotech.com/spec/DMN/20191111/EXT/" xmlns:i18n="http://www.omg.org/spec/BPMN/non-normative/extensions/i18n/1.0" xmlns:rss="http://purl.org/rss/2.0/" xmlns:trisofeed="http://trisotech.com/feed" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdmn="https://www.omg.org/spec/SDMN/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"                   xmlns:ns1="http://www.omg.org/spec/DMN/20180521/DMNDI/"  xmlns:ns2="http://www.omg.org/spec/DMN/20180521/FEEL/"  xmlns="http://www.trisotech.com/definitions/_2b974770-bd34-43db-82aa-937e703a8bb7" id="_2b974770-bd34-43db-82aa-937e703a8bb7" name="PersonalizedMenu2025-Alternative" namespace="http://www.trisotech.com/definitions/_2b974770-bd34-43db-82aa-937e703a8bb7" exporter="Decision Modeler" exporterVersion="9.8.4" xml:lang="en" triso:translationLanguages="" triso:logoChoice="Default">
+    <semantic:extensionElements/>
+    <semantic:itemDefinition name="meal" label="meal" isCollection="false">
+        <semantic:itemComponent id="_79740d7c-ed23-4980-8fe5-efd32faef957" name="name" isCollection="false">
+            <semantic:typeRef>Any</semantic:typeRef>
+        </semantic:itemComponent>
+        <semantic:itemComponent id="_0ec502d1-366d-4da6-83a3-249ab1b7a21a" name="ingredients" isCollection="false">
+            <semantic:typeRef>Any</semantic:typeRef>
+        </semantic:itemComponent>
+        <semantic:itemComponent id="_abdd58d8-9667-4bbf-b747-e5ad442ff8e2" name="category" isCollection="false">
+            <semantic:typeRef>Any</semantic:typeRef>
+        </semantic:itemComponent>
+        <semantic:itemComponent id="_6c4a10f0-148e-46bd-8429-71ad6f8facbc" name="totalCalories" isCollection="false">
+            <semantic:typeRef>Any</semantic:typeRef>
+        </semantic:itemComponent>
+        <semantic:itemComponent id="_a114b369-2d76-4b85-8ec8-84a398404992" name="course" isCollection="false">
+            <semantic:typeRef>Any</semantic:typeRef>
+        </semantic:itemComponent>
+        <semantic:itemComponent id="_ad269a9b-9469-4d71-8e6f-016017743f6d" name="allergens" isCollection="false">
+            <semantic:typeRef>Any</semantic:typeRef>
+        </semantic:itemComponent>
+    </semantic:itemDefinition>
+    <semantic:itemDefinition name="mealList" label="mealList" isCollection="true">
+        <semantic:typeRef>meal</semantic:typeRef>
+    </semantic:itemDefinition>
+    <semantic:itemDefinition name="allergyList" label="allergyList" isCollection="true">
+        <semantic:typeRef>string</semantic:typeRef>
+        <semantic:allowedValues>
+            <semantic:extensionElements>
+                <triso:constraintDetails constraintsType="enumeration" id="_cbbd1538-f724-452f-9153-0df644593f72">
+                    <triso:value>"sulfur dioxide and sulfites","tree nuts","gluten","milk","lupins","mollusks","fish","celery","sesame seeds","soy","eggs"</triso:value>
+                    <triso:display>"sulfur dioxide and sulfites", "tree nuts", "gluten", "milk", "lupins", "mollusks", "fish", "celery", "sesame seeds", "soy", "eggs"</triso:display>
+                    <triso:choices>
+                        <triso:value>"sulfur dioxide and sulfites"</triso:value>
+                        <triso:display>"sulfur dioxide and sulfites"</triso:display>
+                    </triso:choices>
+                    <triso:choices>
+                        <triso:value>"tree nuts"</triso:value>
+                        <triso:display>"tree nuts"</triso:display>
+                    </triso:choices>
+                    <triso:choices>
+                        <triso:value>"gluten"</triso:value>
+                        <triso:display>"gluten"</triso:display>
+                    </triso:choices>
+                    <triso:choices>
+                        <triso:value>"milk"</triso:value>
+                        <triso:display>"milk"</triso:display>
+                    </triso:choices>
+                    <triso:choices>
+                        <triso:value>"lupins"</triso:value>
+                        <triso:display>"lupins"</triso:display>
+                    </triso:choices>
+                    <triso:choices>
+                        <triso:value>"mollusks"</triso:value>
+                        <triso:display>"mollusks"</triso:display>
+                    </triso:choices>
+                    <triso:choices>
+                        <triso:value>"fish"</triso:value>
+                        <triso:display>"fish"</triso:display>
+                    </triso:choices>
+                    <triso:choices>
+                        <triso:value>"celery"</triso:value>
+                        <triso:display>"celery"</triso:display>
+                    </triso:choices>
+                    <triso:choices>
+                        <triso:value>"sesame seeds"</triso:value>
+                        <triso:display>"sesame seeds"</triso:display>
+                    </triso:choices>
+                    <triso:choices>
+                        <triso:value>"soy"</triso:value>
+                        <triso:display>"soy"</triso:display>
+                    </triso:choices>
+                    <triso:choices>
+                        <triso:value>"eggs"</triso:value>
+                        <triso:display>"eggs"</triso:display>
+                    </triso:choices>
+                </triso:constraintDetails>
+            </semantic:extensionElements>
+            <semantic:text>"sulfur dioxide and sulfites","tree nuts","gluten","milk","lupins","mollusks","fish","celery","sesame seeds","soy","eggs"</semantic:text>
+        </semantic:allowedValues>
+    </semantic:itemDefinition>
+    <semantic:itemDefinition name="dietTypeList" label="dietTypeList" isCollection="false">
+        <semantic:typeRef>string</semantic:typeRef>
+        <semantic:allowedValues>
+            <semantic:extensionElements>
+                <triso:constraintDetails constraintsType="enumeration" id="_923ca557-786d-4785-a6e5-9c82cdb60764">
+                    <triso:value>"carnivore","vegetarian","vegan","pescatarian"</triso:value>
+                    <triso:display>"carnivore", "vegetarian", "vegan", "pescatarian"</triso:display>
+                    <triso:choices>
+                        <triso:value>"carnivore"</triso:value>
+                        <triso:display>"carnivore"</triso:display>
+                    </triso:choices>
+                    <triso:choices>
+                        <triso:value>"vegetarian"</triso:value>
+                        <triso:display>"vegetarian"</triso:display>
+                    </triso:choices>
+                    <triso:choices>
+                        <triso:value>"vegan"</triso:value>
+                        <triso:display>"vegan"</triso:display>
+                    </triso:choices>
+                    <triso:choices>
+                        <triso:value>"pescatarian"</triso:value>
+                        <triso:display>"pescatarian"</triso:display>
+                    </triso:choices>
+                </triso:constraintDetails>
+            </semantic:extensionElements>
+            <semantic:text>"carnivore","vegetarian","vegan","pescatarian"</semantic:text>
+        </semantic:allowedValues>
+    </semantic:itemDefinition>
+    <semantic:itemDefinition name="caloriesList" label="caloriesList" isCollection="false">
+        <semantic:typeRef>string</semantic:typeRef>
+        <semantic:allowedValues>
+            <semantic:extensionElements>
+                <triso:constraintDetails constraintsType="enumeration" id="_353dcd6e-8a1d-4c5b-baa2-48e05832f2f1">
+                    <triso:value>"&lt; 400","&gt;= 400 &lt; 600","&gt;= 600"</triso:value>
+                    <triso:display>"&lt; 400", "&gt;= 400 &lt; 600", "&gt;= 600"</triso:display>
+                    <triso:choices>
+                        <triso:value>"&lt; 400"</triso:value>
+                        <triso:display>"&lt; 400"</triso:display>
+                    </triso:choices>
+                    <triso:choices>
+                        <triso:value>"&gt;= 400 &lt; 600"</triso:value>
+                        <triso:display>"&gt;= 400 &lt; 600"</triso:display>
+                    </triso:choices>
+                    <triso:choices>
+                        <triso:value>"&gt;= 600"</triso:value>
+                        <triso:display>"&gt;= 600"</triso:display>
+                    </triso:choices>
+                </triso:constraintDetails>
+            </semantic:extensionElements>
+            <semantic:text>"&lt; 400","&gt;= 400 &lt; 600","&gt;= 600"</semantic:text>
+        </semantic:allowedValues>
+    </semantic:itemDefinition>
+    <semantic:itemDefinition name="Collection_of_meal" label="Collection of meal" isCollection="true">
+        <semantic:typeRef>meal</semantic:typeRef>
+    </semantic:itemDefinition>
+    <semantic:decisionService id="_2b974770-bd34-43db-82aa-937e703a8bb7_DS" name="Whole Model Decision Service" triso:dynamicDecisionService="true" triso:wholeModelService="true">
+        <semantic:variable name="Whole Model Decision Service" id="_2b974770-bd34-43db-82aa-937e703a8bb7_DS_VAR" typeRef="Any"/>
+        <semantic:outputDecision href="#_1fe26703-b2c6-45c8-98e4-74505158890a"/>
+        <semantic:encapsulatedDecision href="#_c4aa3977-9b7d-4b7d-9f04-d094c078ec0c"/>
+        <semantic:encapsulatedDecision href="#_d548fc9f-1d85-4df8-b25b-0e7632a66e88"/>
+        <semantic:encapsulatedDecision href="#_36ac082e-d28b-4498-acbd-1337d3e43ae7"/>
+        <semantic:encapsulatedDecision href="#_c1cde024-5d1c-4851-aa32-b56de4b498b6"/>
+        <semantic:inputData href="#_52a8b5ca-8c52-409c-8e93-83e6a0aa5083"/>
+        <semantic:inputData href="#_8473d5d6-1e8c-4853-9a4d-cd5ee77abf69"/>
+        <semantic:inputData href="#_1d08416e-dcc2-424e-9f3d-3f148e0fdb3e"/>
+        <semantic:inputData href="#_8d150dc6-8206-4fcf-99e8-f9bc3cc8cb88"/>
+        <semantic:inputData href="#_5bfd9110-bf76-4751-be4a-c3c1a67e5d90"/>
+        <semantic:inputData href="#_48976f47-4bce-4fb3-b70e-7a2c0a84fee0"/>
+        <semantic:inputData href="#_586a3a52-7a50-47e8-bd6b-be03051b84c2"/>
+        <semantic:inputData href="#_7f06b574-2743-4ccc-8f14-762350096bd0"/>
+        <semantic:inputData href="#_0ead6652-e2e2-4a03-88fd-a06c7eec0978"/>
+        <semantic:inputData href="#_14ec6e54-e8d4-4c4f-8948-7023f9228f28"/>
+        <semantic:inputData href="#_4eabbc3b-b578-43ab-9a3b-cf7e56c9fddb"/>
+        <semantic:inputData href="#_c0208db3-1bb9-430f-ad7d-c5ee4388352b"/>
+        <semantic:inputData href="#_689d60a8-f44b-4f41-a6b6-5c269b10caae"/>
+    </semantic:decisionService>
+    <semantic:decisionService id="_9f47c194-8d20-41d1-b365-4db32894ea11_DS" name="Diagram Page 1" triso:dynamicDecisionService="true">
+        <semantic:variable name="Diagram Page 1" id="_9f47c194-8d20-41d1-b365-4db32894ea11_DS_VAR" typeRef="Any"/>
+        <semantic:outputDecision href="#_1fe26703-b2c6-45c8-98e4-74505158890a"/>
+        <semantic:encapsulatedDecision href="#_c4aa3977-9b7d-4b7d-9f04-d094c078ec0c"/>
+        <semantic:encapsulatedDecision href="#_d548fc9f-1d85-4df8-b25b-0e7632a66e88"/>
+        <semantic:encapsulatedDecision href="#_36ac082e-d28b-4498-acbd-1337d3e43ae7"/>
+        <semantic:encapsulatedDecision href="#_c1cde024-5d1c-4851-aa32-b56de4b498b6"/>
+        <semantic:inputData href="#_52a8b5ca-8c52-409c-8e93-83e6a0aa5083"/>
+        <semantic:inputData href="#_8473d5d6-1e8c-4853-9a4d-cd5ee77abf69"/>
+        <semantic:inputData href="#_1d08416e-dcc2-424e-9f3d-3f148e0fdb3e"/>
+        <semantic:inputData href="#_8d150dc6-8206-4fcf-99e8-f9bc3cc8cb88"/>
+        <semantic:inputData href="#_5bfd9110-bf76-4751-be4a-c3c1a67e5d90"/>
+        <semantic:inputData href="#_48976f47-4bce-4fb3-b70e-7a2c0a84fee0"/>
+        <semantic:inputData href="#_586a3a52-7a50-47e8-bd6b-be03051b84c2"/>
+        <semantic:inputData href="#_7f06b574-2743-4ccc-8f14-762350096bd0"/>
+        <semantic:inputData href="#_0ead6652-e2e2-4a03-88fd-a06c7eec0978"/>
+        <semantic:inputData href="#_14ec6e54-e8d4-4c4f-8948-7023f9228f28"/>
+        <semantic:inputData href="#_4eabbc3b-b578-43ab-9a3b-cf7e56c9fddb"/>
+        <semantic:inputData href="#_c0208db3-1bb9-430f-ad7d-c5ee4388352b"/>
+        <semantic:inputData href="#_689d60a8-f44b-4f41-a6b6-5c269b10caae"/>
+    </semantic:decisionService>
+    <semantic:inputData id="_52a8b5ca-8c52-409c-8e93-83e6a0aa5083" name="Diet type" triso:readOnly="false">
+        <semantic:variable name="Diet type" id="_50a2c574-ac95-4180-9d1f-9a06990a52fb" typeRef="dietTypeList"/>
+    </semantic:inputData>
+    <semantic:decision id="_c4aa3977-9b7d-4b7d-9f04-d094c078ec0c" name="Meals" triso:readOnly="false" triso:useOutputTypeAsAnswer="false">
+        <semantic:variable name="Meals" id="_94894a92-2f3b-4d33-9fe2-4ef8ac196830" typeRef="mealList"/>
+        <semantic:literalExpression typeRef="mealList" id="_df0544b6-74a5-42c6-a415-dd18c6966467" triso:expressionId="_6d3a6d9a-d022-4090-8ad2-9457d346fe07" triso:descriptionVisible="false">
+            <semantic:text>[
+  {
+    "name": "Lasagna with Meat Sauce",
+    "ingredients": [
+      {
+        "name": "Egg Pasta",
+        "calories": 300
+      },
+      {
+        "name": "Meat Sauce",
+        "calories": 250
+      },
+      {
+        "name": "Béchamel Sauce",
+        "calories": 200
+      },
+      {
+        "name": "Parmesan",
+        "calories": 100
+      }
+    ],
+    "totalCalories": 850,
+    "category": "carnivore",
+    "course": "main",
+    "allergens": [
+      "gluten",
+      "eggs",
+      "milk"
+    ],
+    "rate": 4.8
+  },
+  {
+    "name": "Pumpkin Risotto",
+    "ingredients": [
+      {
+        "name": "Rice",
+        "calories": 300
+      },
+      {
+        "name": "Pumpkin",
+        "calories": 80
+      },
+      {
+        "name": "Butter",
+        "calories": 150
+      },
+      {
+        "name": "Parmesan",
+        "calories": 120
+      }
+    ],
+    "totalCalories": 650,
+    "category": "vegetarian",
+    "course": "main",
+    "allergens": [
+      "milk"
+    ],
+    "rate": 4.3
+  },
+  {
+    "name": "Legume Soup",
+    "ingredients": [
+      {
+        "name": "Mixed Legumes",
+        "calories": 300
+      },
+      {
+        "name": "Celery",
+        "calories": 20
+      },
+      {
+        "name": "Carrots",
+        "calories": 30
+      },
+      {
+        "name": "Olive Oil",
+        "calories": 80
+      }
+    ],
+    "totalCalories": 430,
+    "category": "vegan",
+    "course": "main",
+    "allergens": [
+      "celery"
+    ],
+    "rate": 3.0
+  },
+  {
+    "name": "Spaghetti with Clams",
+    "ingredients": [
+      {
+        "name": "Spaghetti",
+        "calories": 350
+      },
+      {
+        "name": "Clams",
+        "calories": 150
+      },
+      {
+        "name": "Olive Oil",
+        "calories": 100
+      },
+      {
+        "name": "Parsley",
+        "calories": 10
+      }
+    ],
+    "totalCalories": 610,
+    "category": "pescatarian",
+    "course": "main",
+    "allergens": [
+      "gluten",
+      "mollusks"
+    ],
+    "rate": 2.7
+  },
+  {
+    "name": "Pasta with Walnut Pesto",
+    "ingredients": [
+      {
+        "name": "Pasta",
+        "calories": 350
+      },
+      {
+        "name": "Walnuts",
+        "calories": 200
+      },
+      {
+        "name": "Olive Oil",
+        "calories": 100
+      }
+    ],
+    "totalCalories": 650,
+    "category": "vegetarian",
+    "course": "main",
+    "allergens": [
+      "gluten",
+      "tree nuts"
+    ],
+    "rate": 2.7
+  },
+  {
+    "name": "Vegetable Couscous",
+    "ingredients": [
+      {
+        "name": "Couscous",
+        "calories": 300
+      },
+      {
+        "name": "Mixed Vegetables",
+        "calories": 150
+      },
+      {
+        "name": "Olive Oil",
+        "calories": 100
+      }
+    ],
+    "totalCalories": 550,
+    "category": "vegan",
+    "course": "main",
+    "allergens": [
+      "gluten"
+    ],
+    "rate": 3.3
+  },
+  {
+    "name": "Grilled Steak",
+    "ingredients": [
+      {
+        "name": "Beef",
+        "calories": 500
+      },
+      {
+        "name": "Olive Oil",
+        "calories": 50
+      }
+    ],
+    "totalCalories": 550,
+    "category": "carnivore",
+    "course": "second",
+    "allergens": [],
+    "rate": 2.9
+  },
+  {
+    "name": "Zucchini Omelet",
+    "ingredients": [
+      {
+        "name": "Eggs",
+        "calories": 200
+      },
+      {
+        "name": "Zucchini",
+        "calories": 50
+      },
+      {
+        "name": "Parmesan",
+        "calories": 80
+      }
+    ],
+    "totalCalories": 330,
+    "category": "vegetarian",
+    "course": "second",
+    "allergens": [
+      "eggs",
+      "milk"
+    ],
+    "rate": 2.6
+  },
+  {
+    "name": "Grilled Seitan",
+    "ingredients": [
+      {
+        "name": "Seitan",
+        "calories": 250
+      },
+      {
+        "name": "Grilled Vegetables",
+        "calories": 100
+      },
+      {
+        "name": "Olive Oil",
+        "calories": 50
+      }
+    ],
+    "totalCalories": 400,
+    "category": "vegan",
+    "course": "second",
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "rate": 2.6
+  },
+  {
+    "name": "Salmon Fillet",
+    "ingredients": [
+      {
+        "name": "Salmon",
+        "calories": 400
+      },
+      {
+        "name": "Lemon",
+        "calories": 10
+      },
+      {
+        "name": "Olive Oil",
+        "calories": 50
+      }
+    ],
+    "totalCalories": 460,
+    "category": "pescatarian",
+    "course": "second",
+    "allergens": [
+      "fish"
+    ],
+    "rate": 4.7
+  },
+  {
+    "name": "Stir-Fried Tofu with Vegetables",
+    "ingredients": [
+      {
+        "name": "Tofu",
+        "calories": 200
+      },
+      {
+        "name": "Mixed Vegetables",
+        "calories": 100
+      },
+      {
+        "name": "Soy Sauce",
+        "calories": 50
+      }
+    ],
+    "totalCalories": 370,
+    "category": "vegan",
+    "course": "second",
+    "allergens": [
+      "soy"
+    ],
+    "rate": 4.4
+  },
+  {
+    "name": "Lupin Burger",
+    "ingredients": [
+      {
+        "name": "Lupins",
+        "calories": 250
+      },
+      {
+        "name": "Bread",
+        "calories": 200
+      },
+      {
+        "name": "Fresh Vegetables",
+        "calories": 50
+      }
+    ],
+    "totalCalories": 500,
+    "category": "vegan",
+    "course": "second",
+    "allergens": [
+      "gluten",
+      "lupins"
+    ],
+    "rate": 4.4
+  },
+  {
+    "name": "Hazelnut Cake",
+    "ingredients": [
+      {
+        "name": "Flour",
+        "calories": 300
+      },
+      {
+        "name": "Hazelnuts",
+        "calories": 200
+      },
+      {
+        "name": "Butter",
+        "calories": 150
+      },
+      {
+        "name": "Eggs",
+        "calories": 100
+      }
+    ],
+    "totalCalories": 750,
+    "category": "vegetarian",
+    "course": "dessert",
+    "allergens": [
+      "gluten",
+      "eggs",
+      "milk",
+      "tree nuts"
+    ],
+    "rate": 3.7
+  },
+  {
+    "name": "Fruit Salad",
+    "ingredients": [
+      {
+        "name": "Fresh Fruit",
+        "calories": 150
+      }
+    ],
+    "totalCalories": 150,
+    "category": "vegan",
+    "course": "dessert",
+    "allergens": [],
+    "rate": 3.0
+  },
+  {
+    "name": "Lemon Sorbet",
+    "ingredients": [
+      {
+        "name": "Lemon",
+        "calories": 50
+      },
+      {
+        "name": "Sugar",
+        "calories": 150
+      },
+      {
+        "name": "Sulfur Dioxide",
+        "calories": 0
+      }
+    ],
+    "totalCalories": 200,
+    "category": "vegan",
+    "course": "dessert",
+    "allergens": [
+      "sulfur dioxide and sulfites"
+    ],
+    "rate": 3.7
+  },
+  {
+    "name": "Chocolate Soy Pudding",
+    "ingredients": [
+      {
+        "name": "Soy Milk",
+        "calories": 100
+      },
+      {
+        "name": "Cocoa",
+        "calories": 50
+      },
+      {
+        "name": "Sugar",
+        "calories": 150
+      }
+    ],
+    "totalCalories": 300,
+    "category": "vegan",
+    "course": "dessert",
+    "allergens": [
+      "soy"
+    ],
+    "rate": 4.5
+  },
+  {
+    "name": "Cream Ice Cream",
+    "ingredients": [
+      {
+        "name": "Milk",
+        "calories": 200
+      },
+      {
+        "name": "Eggs",
+        "calories": 100
+      },
+      {
+        "name": "Sugar",
+        "calories": 150
+      }
+    ],
+    "totalCalories": 450,
+    "category": "vegetarian",
+    "course": "dessert",
+    "allergens": [
+      "eggs",
+      "milk"
+    ],
+    "rate": 2.7
+  },
+  {
+    "name": "Sesame Cake",
+    "ingredients": [
+      {
+        "name": "Flour",
+        "calories": 300
+      },
+      {
+        "name": "Sesame Seeds",
+        "calories": 150
+      },
+      {
+        "name": "Sugar",
+        "calories": 100
+      }
+    ],
+    "totalCalories": 550,
+    "category": "vegan",
+    "course": "dessert",
+    "allergens": [
+      "gluten",
+      "sesame seeds"
+    ],
+    "rate": 4.5
+  }
+]</semantic:text>
+        </semantic:literalExpression>
+    </semantic:decision>
+    <semantic:decision id="_d548fc9f-1d85-4df8-b25b-0e7632a66e88" name="Allergies Filter" triso:readOnly="false" triso:useOutputTypeAsAnswer="false">
+        <semantic:variable name="Allergies Filter" id="_6f5c4b64-5c7f-420d-9755-cc27a4e439a2" typeRef="Collection_of_meal"/>
+        <semantic:informationRequirement id="_be8c80d9-6b97-407f-af00-14c5e6491d78" triso:readOnly="false">
+            <semantic:requiredDecision href="#_c4aa3977-9b7d-4b7d-9f04-d094c078ec0c"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_b94dff42-1b7b-4b07-878e-9bb31c0a9f7b" triso:readOnly="false">
+            <semantic:requiredInput href="#_1d08416e-dcc2-424e-9f3d-3f148e0fdb3e"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_c76bb61d-6545-46e9-9d27-cf9f70c4afc2" triso:readOnly="false">
+            <semantic:requiredInput href="#_8d150dc6-8206-4fcf-99e8-f9bc3cc8cb88"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_48efa28a-6b84-49b4-a818-17cedc7a1a1f" triso:readOnly="false">
+            <semantic:requiredInput href="#_5bfd9110-bf76-4751-be4a-c3c1a67e5d90"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_e6de70eb-e699-4864-a2b5-e96fc389ec0f" triso:readOnly="false">
+            <semantic:requiredInput href="#_48976f47-4bce-4fb3-b70e-7a2c0a84fee0"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_741de5a9-95aa-42e2-a149-836bf48da552" triso:readOnly="false">
+            <semantic:requiredInput href="#_586a3a52-7a50-47e8-bd6b-be03051b84c2"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_95bcca98-7a99-4e65-89c2-bae31af9c107" triso:readOnly="false">
+            <semantic:requiredInput href="#_7f06b574-2743-4ccc-8f14-762350096bd0"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_b3b8974d-7fda-4426-a2c5-58fa91a4a6b3" triso:readOnly="false">
+            <semantic:requiredInput href="#_0ead6652-e2e2-4a03-88fd-a06c7eec0978"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_fab5def8-87b6-417e-9275-6c7d82a8c27b" triso:readOnly="false">
+            <semantic:requiredInput href="#_4eabbc3b-b578-43ab-9a3b-cf7e56c9fddb"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_6ebd6252-3670-4dc7-906e-67b22d9000ec" triso:readOnly="false">
+            <semantic:requiredInput href="#_c0208db3-1bb9-430f-ad7d-c5ee4388352b"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_c16dc658-1c2d-4965-a308-621d3ef1d77e" triso:readOnly="false">
+            <semantic:requiredInput href="#_689d60a8-f44b-4f41-a6b6-5c269b10caae"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_be680136-2fcf-4545-84a4-94e4f202ad74" triso:readOnly="false">
+            <semantic:requiredInput href="#_14ec6e54-e8d4-4c4f-8948-7023f9228f28"/>
+        </semantic:informationRequirement>
+        <semantic:decisionTable triso:descriptionVisible="false" id="_a630184a-7122-4737-991d-8c3fb482232e" hitPolicy="UNIQUE" outputLabel="Allergies Filter" typeRef="Collection_of_meal" triso:expressionId="_e2795ed2-a751-4b07-a8a7-019dce805e42">
+            <semantic:input id="_85541c6e-d4c7-43c5-bbd3-be52d9b5fe09" triso:allowNull="true" label="Eggs allergic">
+                <semantic:inputExpression typeRef="boolean">
+                    <semantic:text>Eggs allergic</semantic:text>
+                </semantic:inputExpression>
+            </semantic:input>
+            <semantic:input id="_a59fc403-11f8-4418-b586-28641b3d4e95" triso:allowNull="true" label="Fish allergic">
+                <semantic:inputExpression typeRef="boolean">
+                    <semantic:text>Fish allergic</semantic:text>
+                </semantic:inputExpression>
+            </semantic:input>
+            <semantic:input id="_57495e91-15c4-40b8-8cbd-678339a3aa2f" triso:allowNull="true" label="Lupins allergic">
+                <semantic:inputExpression typeRef="boolean">
+                    <semantic:text>Lupins allergic</semantic:text>
+                </semantic:inputExpression>
+            </semantic:input>
+            <semantic:input id="_326e139a-5d05-4f4a-b33b-53dc228e64ae" triso:allowNull="true" label="Milk allergic">
+                <semantic:inputExpression typeRef="boolean">
+                    <semantic:text>Milk allergic</semantic:text>
+                </semantic:inputExpression>
+            </semantic:input>
+            <semantic:input id="_ac4d98d9-7db8-4edc-aae1-8e38ad1ef369" triso:allowNull="true" label="Mollusks allergic">
+                <semantic:inputExpression typeRef="boolean">
+                    <semantic:text>Mollusks allergic</semantic:text>
+                </semantic:inputExpression>
+            </semantic:input>
+            <semantic:input id="_8ecca598-fa43-4fde-b011-fe7828b14423" triso:allowNull="true" label="Sesame seeds allergic">
+                <semantic:inputExpression typeRef="boolean">
+                    <semantic:text>Sesame seeds allergic</semantic:text>
+                </semantic:inputExpression>
+            </semantic:input>
+            <semantic:input id="_af8968d4-bf07-49ed-ab3b-0bf8efaa4462" triso:allowNull="true" label="Soy allergic">
+                <semantic:inputExpression typeRef="boolean">
+                    <semantic:text>Soy allergic</semantic:text>
+                </semantic:inputExpression>
+            </semantic:input>
+            <semantic:input id="_34edb848-5aa4-4ef8-b11e-96f3e27ec654" triso:allowNull="true" label="Sulfur dioxide and sulfites allergic">
+                <semantic:inputExpression typeRef="boolean">
+                    <semantic:text>Sulfur dioxide and sulfites allergic</semantic:text>
+                </semantic:inputExpression>
+            </semantic:input>
+            <semantic:input id="_26be7003-a096-4362-9925-6a29f8b76759" triso:allowNull="true" label="Tree nuts allergic">
+                <semantic:inputExpression typeRef="boolean">
+                    <semantic:text>Tree nuts allergic</semantic:text>
+                </semantic:inputExpression>
+            </semantic:input>
+            <semantic:input id="_4bf0d604-8265-48c0-bd5e-99039fad6326" triso:allowNull="true" label="Gluten allergic">
+                <semantic:inputExpression typeRef="boolean">
+                    <semantic:text>Gluten allergic</semantic:text>
+                </semantic:inputExpression>
+            </semantic:input>
+            <semantic:input id="_ab85cd55-d184-4cf0-adaf-5923a51fdf03" triso:allowNull="true" label="Celery allergic">
+                <semantic:inputExpression typeRef="boolean">
+                    <semantic:text>Celery allergic</semantic:text>
+                </semantic:inputExpression>
+            </semantic:input>
+            <semantic:output id="_ad828c1f-e4a7-4ccb-bc01-727ce9ab38a1"/>
+            <semantic:annotation name="Description"/>
+            <semantic:annotation name="Description"/>
+            <semantic:rule id="_65fdb09c-6aaa-40d5-ae6a-11097703bde6">
+                <semantic:inputEntry id="_cfb7a8c0-f348-4fc8-8788-e30696c31496">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_e0ec5789-dae0-4daf-83e2-1faea0422c7f">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_d1a19646-0d25-4737-8beb-6767350fc744">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_c8a083f7-ff02-437a-89c3-290e084c3bbf">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_7a532590-35ea-4736-acf7-990b728e2253">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_ed740200-d99b-470e-84c2-72d82077f703">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_a9bc71f1-f6c0-48d6-88ef-deaac11ec4c7">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_bb62245c-1e22-4747-ab81-33e58cb67744">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_138d2bd1-1b06-4b31-b4df-fcfd18280c75">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_2fa3f794-a07c-4707-8a1d-a60412946ea9">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_2bba1ae4-12d4-4c0a-80f8-5c6eac18dc3b">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_5575bcbb-541d-48ea-98b7-cf195fe47e47">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies a = "eggs") ]
+</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_600e09ac-49fa-4f60-83bb-e94043f6b59f">
+                <semantic:inputEntry id="_b6a41d35-f498-464c-94b8-c8b148afcf1e">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_a722b24f-0faf-4cfb-99f7-d65c983f65b0">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_ce00251a-5de3-4c30-88d5-7d9c0c7d35bc">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_043a3e50-f473-4179-9719-659db9e5a6db">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_cce8ea5d-73dd-4705-bd54-e1bbfe70e1e2">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_3a6a1f80-154e-4954-98d3-13131e753cb5">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_06d192e7-c691-4584-b270-0cb160126a49">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_6773d37b-a7eb-415a-8757-43b83db2e2c4">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_032e104b-1ce7-4273-87c2-9aa1c2dca49c">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_1c9c75fa-9fc6-4c3a-b545-cffd7d2d9362">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_d6ace068-4c9d-4b4a-a115-315f5affddce">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_44c09141-7805-416f-958b-e38de8819cd9">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies a = "fish") ]
+</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_0d6a1c17-1a9b-47f5-842c-cfd15a437a37">
+                <semantic:inputEntry id="_710853a8-da36-4200-8c35-9ad33428d6a7">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_a62c3da0-205e-43f6-aafb-89c46ac0add3">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_98329f52-fa56-4a71-86cc-98c514967627">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_1e9f958f-8661-4de4-9429-65120d7ace2e">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_1d6651f5-f08c-4141-a492-053b71de0ea1">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_943e28a9-9834-4ec5-9c04-06cfdb2b9bb6">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_bb04d996-d9ba-4193-a5d7-e2841d4ed9d3">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_e8f7b80f-d30a-4dab-acf3-275b1f549e14">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_37d4240f-a218-426c-9bda-2b68d1c048c1">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_0af4cd91-b740-42b7-be9e-8e57bff28234">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_b807043b-e6af-410c-b2cd-7aae5da31885">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_ea8e720d-5bfc-425f-aa33-e907e7c4d969">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies a = "lupins") ]
+</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_82e287a5-9a7b-4ec0-9c95-ec1a703669b5">
+                <semantic:inputEntry id="_41d3c0dd-6f32-465e-9620-74b8f9269e7c">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_89116d41-d4c2-4c8a-8aa1-0c55e1bb855f">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_85cf245e-5189-4cce-ac95-023cf00769ce">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_3eaf770d-385c-4e44-a787-25ed5dd28ca4">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_b5d83744-4c54-4d2c-9e97-df4ef9fa5873">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_d70d2333-e7e5-44dd-b7c4-af0ba8b2fb82">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_3e5425a2-6874-4214-bbeb-4bf17c93504f">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_a5980a30-5e9f-4eba-89fa-fe7e9756d36f">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_e8376a73-398f-46ff-aa49-6433ab57a1d6">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_9a200070-e8e0-4eb6-aa6f-b16d96a2fa3c">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_a556f919-9c9e-4ac4-9c78-74ec0fad8a15">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_9b43cfbc-94b6-4108-b2e9-424536e246dc">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies a = "milk") ]
+</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_a812482d-371e-4ca6-a464-fcf79c4afc60">
+                <semantic:inputEntry id="_3e718ef7-6b59-4b9b-b005-d87673d68a42">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_5cc4b1e0-896f-4f05-b0b1-1e8628a7dcdd">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_b39a9f2c-d70c-4b89-b860-03fde30a9f21">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_dcf842bf-73e5-427b-a6f3-1e9d0b822d26">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_06b9cecc-e9e6-4701-a68e-eb2517342f75">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_b73e4bbe-9be5-4cd6-8aad-f3c7a007473c">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_a2af10e9-b4f2-483a-ac77-9cc4a23216e6">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_f543f780-f302-4f10-bf6f-203487ff7099">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_0e0376ab-7024-4b56-a80a-1279011f919e">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_cf0d58f8-af53-4c3e-97b9-0b5f91fb6c35">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_87e58a7a-d967-43df-9a4b-0fa2a9fd06b3">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_a1814a96-cb7b-4a2b-a98a-29f2c34abbc6">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies a = "mollusks") ]
+</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_50c50605-6b8e-473f-913c-78f7e944dc56">
+                <semantic:inputEntry id="_9c9905d8-c2f5-45d1-9bc1-99a3e14f8428">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_0fb3a3f7-a637-4ff1-be1b-6f9d01800187">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_967a1b2b-c82a-4112-92ad-4dc946bb4144">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_c7e2c2d4-c9f6-4e39-b39f-eae6255812b9">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_2befdc2b-daf8-4b8d-ad93-f123ef9fb4a1">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_624fe14a-89d2-40f1-b421-627b3e13a0ac">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_07932d93-d716-44b1-80fd-15422ff4d7ea">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_2f960ecb-8aa7-46fd-8fff-10536bbf6510">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_5a5872f7-d61c-4ea1-9e07-8f81df7da6a5">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_037b0acb-9017-4211-b0c3-1dee2b256442">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_2c7e46ce-018a-431d-bae3-45c33239c1fa">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_5b377be8-7e17-49e9-97fa-802faa0b2375">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies a = "sesame seeds") ]
+</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_913213ac-a1f7-46e4-ae39-bf82ccb6e941">
+                <semantic:inputEntry id="_dc47e380-ed80-4b62-991f-ae7f2ce7613f">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_0586b9b1-5256-4062-a994-e19d07e64816">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_b6d2fc27-1b88-478e-b1d9-2054858f080a">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_3232ca21-a7d2-4aa9-b855-5847682d16e4">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_b92972be-69b6-427c-9864-1caca94c0649">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_33ec0a7f-be39-496f-9a79-e0c3e6830bc8">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_c2d80654-d910-4912-a6ce-c01a35167ec1">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_182f7de6-a3d6-4c15-96a0-e154d66660e1">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_c3865028-cb05-4d6a-b82e-363407bd114e">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_2f1724fe-d528-4873-bf27-68e5c465beea">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_66b8d434-b143-40df-b7dd-391d8fcd1671">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_a2d855cc-72e5-4a44-8d71-c8b1578e7436">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies a = "soy") ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_6c41c73b-bcc4-4c3e-8438-402527c88c26">
+                <semantic:inputEntry id="_fe08d80e-da4e-436c-9cb8-64cbf354fd68">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_e1b3c725-c8f9-470e-96d4-44b53afe28e7">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_50b69789-20ae-42fa-98d4-afc7c5074523">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_c0513f61-b950-4725-a0a6-89c0370c0478">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_8d6376a2-4f13-40a4-8fca-65384396336f">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_1f9d0fd1-3768-4eff-8dad-1a53fb973fa7">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_6ddfb732-d907-4750-8950-7f128032d206">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_e540bc55-6de0-4e3d-8bcc-7bf11f9bc66f">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_ff37a2b5-a61d-44ca-a9a2-23f09e06f69d">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_1e801e8a-bab2-445b-ba5c-12fb24a33963">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_e8b44063-0b19-4bbd-b240-6afbd6b32cff">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_98909b00-a953-4f1e-9a9d-89e80a8e64aa">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies a = "sulfur dioxide and sulfites") ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_ea54bdf8-d508-4466-91bf-7fe6aeebe933">
+                <semantic:inputEntry id="_139e075c-fe0d-407f-8a51-36cf63f41694">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_76c9809a-ceaa-4909-a5ea-e83d098ded9a">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_64f758e6-d7dc-4e50-97f6-15b33d8ea702">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_7c0eb492-6782-4e3c-8312-8d945f0e69f5">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_9d2c47b1-2ad8-4499-bcb5-2f56d1271b34">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_219c618b-1111-4042-8359-660cac0a4bc8">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_bee1bbd6-9637-4738-a9cc-eadd8c78d1ed">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_b51842b3-a6c2-4728-b479-29380b8d671e">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_2344183c-9b67-484c-b4e6-de8f7c89a434">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_9cd230d1-fc42-42df-a7b9-896a208051be">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_69b34bae-7112-4df1-b90a-6a62d164b9d6">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_12ecbd64-fe70-43f1-b991-cd0fc2c79581">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies a = "tree  nuts") ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_ab7f9ef1-9027-4e57-aadf-7ed6a57598bd">
+                <semantic:inputEntry id="_ce114196-255b-4244-bc26-0bfd92447727">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_88cb2af7-132c-4962-90ab-156b6b8b331a">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_f105d81d-c696-4bcb-b34a-98f51a53872b">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_771ed1be-30f3-491d-a6af-b9270c8a6a1c">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_bfb53608-ea26-4e6c-84fb-cc20ab9827a4">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_221c96b6-bdaa-4d78-bd2b-dc38442cda32">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_56d7da20-3e4d-45b7-af6b-484b479ca656">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_09a745d4-31e8-4a1c-ad3b-aa52f00d1e44">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_3005e497-6f4c-4c9d-986b-092456a2a27b">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_a81779a0-9309-42bf-a4ce-1c789f3833b9">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_34a9c74e-83fb-43ca-94d8-57868b58773e">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_cdc5d0a6-d4fe-4372-8208-c6e749cbb0cf">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies a = "gluten") ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_5e719fb7-1fd2-4816-85eb-91020bfb3637">
+                <semantic:inputEntry id="_4048163d-f462-47dd-a7f8-e463480973b8">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_116b6d04-d05b-4075-aa6a-76ba5cc65e0d">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_b4740544-d9a5-4b34-b2b5-eecf648d183c">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_8e17214c-7dc9-4bd1-9d86-db614e6713b0">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_66b4646a-fb58-4afc-9e3d-ddc603976ad5">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_7c2803f8-ea34-4704-92f7-1533eeaab5fa">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_2159e068-06b4-427e-960c-7c668ef77bd9">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_4c1e5e4b-1794-42b4-9b61-dff2a5aeb7dd">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_3a837912-d08d-4dcd-8641-8468db20da96">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_2cef0b96-a55c-48d1-bd91-800dc1b8ac6a">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_af9f7ee6-bc16-4458-88a5-38f1c91221c2">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_8a16b36e-1049-45ae-8880-6e3395d6e65e">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies a = "celery") ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_b1e4cb9f-52ef-44b3-b60d-b8549b5b62ef">
+                <semantic:inputEntry id="_368029ec-fdb0-4c78-8467-2ebabb408c68">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_4d2cec7b-a44a-4c17-9148-0f02aa65eb1f">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_0f174023-d01c-4f4a-9d6f-9fb0a318f636">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_099bd6ac-fb84-47a0-aaad-ca682ebe5e51">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_acf6b327-f0af-440a-8f8c-6ffbdb076bb4">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_53381a85-d62d-4d76-817a-991797ec4aa2">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_c17334fb-9a4d-407f-b9f8-43bb1af563bf">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_24c8826a-53ad-48ea-85d5-46fe1b5a41fe">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_93660f4d-6a41-47f0-98ef-60daa1da066f">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_8d5bcc06-d814-449e-93b3-745cec463c9d">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_e34cfe25-cda7-4c07-bce3-57547b05567a">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_411a7b0a-db73-467a-ba22-e63842fdf4a8">
+                    <semantic:text>Meals</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_810747c5-0cff-478f-ae32-7679d790303b">
+                <semantic:inputEntry id="_a7bfaf18-6826-4005-976d-149d087f0962">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_53949c53-0a13-49fe-82ff-c3133c6cc447">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_7cf2a43c-81f0-4cbc-8afb-8269bc86a1d4">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_ea347356-7bb7-412d-9638-b495121a1d11">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_615a2fd2-45f1-4dde-b194-fd19c0838f64">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_b81a4f35-7c1f-46e6-8923-5c628d6fc94b">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_299e5ad2-cb89-4bfe-8aef-febd33073f88">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_ae88903f-cc8d-4025-bb68-6dc77e8073bf">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_7a390480-e2b1-4eac-930b-9ca69422580e">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_45f19b19-179d-4f77-a5f4-df76b2c31b46">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_69112d2a-e1d8-433b-bdf8-455dbe135b11">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_a865e2b5-0495-41ec-aa00-3b8283b4c8e3">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies list contains(["eggs", "milk"], a)) ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_a08baf59-f00b-4d70-98cf-4b7155859914">
+                <semantic:inputEntry id="_987c9cf8-d00f-4b28-a185-2d7a6d8b9a74">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_938a3296-67b9-4d2d-9c24-c877f0ae5d76">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_7f2cbe28-c876-4be3-a9f5-6d9f00295265">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_c66294d9-fc82-4de0-8bc0-bc0e1fe16adf">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_edc5341e-e8b6-4d9b-a53e-941b8b943337">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_be50e611-5be5-40b2-b91f-1c46fd90c8cf">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_7af939cc-895f-4d71-8049-3862685c0d82">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_4e5c4de1-b214-46e5-8489-e01489cb6d1f">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_09fefa4b-810d-47b3-bbb2-9177b851f529">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_c1cd0a75-dc82-4110-aa1d-310669251b70">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_f3093bfd-98a1-41c7-90de-b0b572fd96ae">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_7c8d425e-b415-489d-a2d8-2cee63e0a557">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies list contains(["eggs", "milk", "gluten"], a)) ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_617bdd69-bdcf-4f06-b1da-51b58dc2ca58">
+                <semantic:inputEntry id="_9f3fd5e4-2089-4c71-bdb5-3a31f9b840c9">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_edda0017-3e8e-4d0a-b5ab-3087e7124ac1">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_fe13d2ab-9b67-454c-bae3-18c314a73d12">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_78418738-3f3e-4f53-9f63-fce537f62082">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_dd917dc1-f5ca-4c63-b45e-43a97290e76b">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_255cd43a-85c7-4018-a443-d64fd2759b9c">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_1c4621a5-37e7-460f-beaa-a357aac09ce0">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_17235cd0-d8a5-42be-82dc-346f8fe19354">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_a9802659-db33-423c-9672-253c96a4a041">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_6b97cba7-88e2-4771-952d-0e12148f8dd9">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_a9283df9-6566-4624-ab56-3142eb2c2dac">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_0804a4ff-545e-4792-aaae-34ee6f05061b">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies list contains(["eggs", "milk", "tree nuts", "gluten"], a)) ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_a298303b-abbf-4e8b-8245-19f4c7c2e528">
+                <semantic:inputEntry id="_2753e001-cade-44a0-a7b2-efee89abc037">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_7a45cdce-b7a8-4777-8afe-9197a46efc57">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_6b0bc5b4-3a44-4933-80e6-4aafd6fd5fc4">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_f11a1082-f039-435f-bef7-ba1961c19f8a">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_5be23564-3e05-4771-84ed-93514eef804c">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_3c468322-c190-40b9-b25c-a12e8ff20a82">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_2c4604d0-c3cc-45cc-8c3c-9071194e3abe">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_ce697174-2057-4e6a-bedc-bc733bcd1dd9">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_bb1de2f5-b56a-4420-adf1-aec026533f90">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_8beba8d9-59ff-4664-83a1-cd94bc971b02">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_99093dd5-9661-432e-8122-c95fa1b7071c">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_82727de4-9f29-4fb7-9125-2a1b7f5d736d">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies list contains(["gluten", "milk"], a)) ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_19059e3b-f08f-4e5b-bef6-06d919c5cac0">
+                <semantic:inputEntry id="_365215a6-1e7c-4a40-983e-7e04dbc7c8f6">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_7ec38788-92c5-483e-9288-9d2de5c51a37">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_a83ac320-5642-44c7-901b-6d77439f4895">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_5a950d65-8253-41ae-95f2-3b5b9cc388ea">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_d32633e0-2b68-4f8c-bbd7-d21176dc3d59">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_562c224a-828f-4f6c-834c-aed66ef2c8af">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_1613436d-2594-4b9e-9421-003040ad8466">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_69fa3eab-2dd8-4de9-a674-d8e99bb04818">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_ae1ae9ec-4152-4b3a-be40-5d189df3ff10">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_9f89ab38-67a7-4554-83f8-f012a1c380c1">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_2e24e6f0-ea82-4a05-9a8c-c2b81b624e26">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_3d3769e5-68f3-48eb-b805-51ed56294d3f">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies list contains(["tree nuts", "lupins"], a)) ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_9cb869e0-5d99-4f21-ad40-a5ffde874ac5">
+                <semantic:inputEntry id="_22dcb365-6e69-40a8-8951-b3e87871e34e">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_d6a30532-e858-4477-9fdd-e504cd12ac7e">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_1709f340-8040-4a24-b030-ae48f2169ad0">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_dd6eccf9-1d6e-4268-b6a1-b7b4ab3274a7">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_48abd3b9-70cc-4220-82cc-75f038494576">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_fb499a4c-f61f-42fb-b91b-ed5ce3f58e54">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_e9faed2e-ce8d-4ba9-b749-d2d105c01e71">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_2a84088c-aa5f-4bc7-8b4f-00dec72f8ca7">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_62367e3f-066a-4ebe-9b16-802e00450201">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_d2a66822-9078-4209-ac06-db23b461cd61">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_7e32b02e-4767-4fb8-809e-6571bbb52dd2">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_9d075c11-40ea-4331-bbb8-f54ae31fcabc">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies list contains(["tree nuts", "lupins", "celery"], a)) ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_bb1c3439-396a-4484-8d0d-fdf590423700">
+                <semantic:inputEntry id="_48ebe292-fbfa-44ab-bfda-b5cbf2f4dda8">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_92cca64e-8be5-466e-90c5-51abb67ca61a">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_cd56e3fc-95dd-46ac-96bd-4db21a845e69">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_12bfea3d-c698-43df-9e2b-226762391099">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_3aa32253-e773-433b-878d-d34fee7d1f20">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_9c2eb15c-a8f0-42c7-9d07-b1db52816e09">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_1479286f-54bd-4a75-9a85-4a63ac9e3054">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_dfee842f-475a-4676-ad39-076fa31acdce">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_3d56d40f-34b4-4cbf-ad06-3708816466a5">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_c6f89cdf-4409-40ba-b1b0-c73397c9fbc3">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_f47ee68e-f711-4e9d-bfc2-6f0940ca5022">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_fc95d313-ce0d-4eb7-ac9d-51a5fab46f9c">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies list contains(["soy", "celery"], a)) ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_7dca9306-2bf5-4e03-899a-163bf069982a">
+                <semantic:inputEntry id="_1b8ab1d1-7bd4-428a-a408-fde16c727403">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_18b36619-125b-4923-a5f9-4aaf3feb5731">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_81ee74f9-6bf4-42d5-bda9-cc3ed8a251cd">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_5c8447be-2958-4a7a-a5bf-14a7f8454c43">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_e1912b88-0376-492a-b899-62d41b8e556b">
+                    <semantic:text>true</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_1bb13d28-52ac-4b91-8966-287b17a3d62b">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_c751bed9-4cfc-4055-8aea-44912bceb179">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_cc9cf13d-e402-44b4-9a96-094b4ae9c79f">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_3b2337bf-ac6d-41e6-8082-3fbf40df1c8f">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_b1e6f509-644c-4b7c-8ac1-2259b41596b5">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:inputEntry id="_d57a5dab-2377-4f20-b1f0-038a3631a1ad">
+                    <semantic:text>false</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_31bfc74d-b7b2-4aa4-a862-d721797f89f1">
+                    <semantic:text>Meals[ not(some a in item.allergens satisfies list contains(["fish", "mollusks"], a)) ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+        </semantic:decisionTable>
+    </semantic:decision>
+    <semantic:decision id="_36ac082e-d28b-4498-acbd-1337d3e43ae7" name="Diet Type Filter" triso:readOnly="false" triso:useOutputTypeAsAnswer="false">
+        <semantic:variable name="Diet Type Filter" id="_d24ab1a5-b20e-4a22-924b-29e0a52d6f29" typeRef="Collection_of_meal"/>
+        <semantic:informationRequirement id="_72103399-e3e0-40d3-b61a-945cacd2a5a7" triso:readOnly="false">
+            <semantic:requiredInput href="#_52a8b5ca-8c52-409c-8e93-83e6a0aa5083"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_ce7182c7-6f51-4199-b885-eaf3a5765f93" triso:readOnly="false">
+            <semantic:requiredDecision href="#_c4aa3977-9b7d-4b7d-9f04-d094c078ec0c"/>
+        </semantic:informationRequirement>
+        <semantic:decisionTable triso:descriptionVisible="false" id="_e31d1f8e-5eb8-40dd-9c88-224b08d2a824" hitPolicy="FIRST" outputLabel="Diet Type Filter" typeRef="Collection_of_meal" triso:expressionId="_3e6bc143-c9b4-4091-8c59-8b8aa0f20999">
+            <semantic:input id="_9bb77864-f7db-4c8e-b6c0-3ffccb114553" triso:allowNull="false" label="Diet type">
+                <semantic:inputExpression typeRef="dietTypeList">
+                    <semantic:text>Diet type</semantic:text>
+                </semantic:inputExpression>
+                <semantic:inputValues triso:constraintsType="enumeration">
+                    <semantic:text>"carnivore","vegetarian","vegan","pescatarian"</semantic:text>
+                </semantic:inputValues>
+            </semantic:input>
+            <semantic:output id="_eae164cc-0e62-4311-9a53-179e95282275" triso:allowNull="true"/>
+            <semantic:annotation name="Description"/>
+            <semantic:rule id="_9c93879a-3fce-4c08-a514-b0c7a9acfcb1">
+                <semantic:inputEntry id="_d90e56bc-e805-4775-9cea-a9c268987e42">
+                    <semantic:text>"carnivore"</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_1e871412-0805-4eab-aeea-17d5f4d6cb35">
+                    <semantic:text>Meals[ item.category = Diet type ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_2f544d70-71b0-42db-9ae5-2286fed36e80">
+                <semantic:inputEntry id="_053c32e9-c3a3-49cd-80eb-37cb1152618f">
+                    <semantic:text>"vegetarian"</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_1a982466-18c4-46cc-ad22-dc47b2530b7d">
+                    <semantic:text>Meals[ item.category = Diet type ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_464e5acd-ce92-43e6-97c4-1ea7d8ffe597">
+                <semantic:inputEntry id="_0fbec886-9600-4fad-916e-9334d617e11e">
+                    <semantic:text>"vegan"</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_4507c58e-cefe-4cb2-8717-1f1839691c8a">
+                    <semantic:text>Meals[ item.category = Diet type ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_e63b65bf-ec4a-4bd1-af41-e1ef91afc66a">
+                <semantic:inputEntry id="_1af74830-ba28-4063-8f57-6d7641648007">
+                    <semantic:text>"pescatarian"</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_5c22b6a3-05fa-42d7-85da-d907c20205b6">
+                    <semantic:text>Meals[ item.category = Diet type ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_3bbb892c-d787-4178-8f77-ff4b7d1e7f42">
+                <semantic:inputEntry id="_2222f939-f8f6-4dfd-8f83-0a371db35327">
+                    <semantic:text>-</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_a5a88361-0696-465e-849d-aacefe4517dd">
+                    <semantic:text>Meals</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+        </semantic:decisionTable>
+    </semantic:decision>
+    <semantic:inputData id="_8473d5d6-1e8c-4853-9a4d-cd5ee77abf69" name="Calories-conscious" triso:readOnly="false">
+        <semantic:variable name="Calories-conscious" id="_fb5bf1fe-58d2-4ff5-a9cd-4f65d226364f" typeRef="caloriesList"/>
+    </semantic:inputData>
+    <semantic:decision id="_c1cde024-5d1c-4851-aa32-b56de4b498b6" name="Calories Conscious Filter" triso:readOnly="false" triso:useOutputTypeAsAnswer="false">
+        <semantic:variable name="Calories Conscious Filter" id="_ffefc619-b11e-476e-a017-7f6d846c3e6f" typeRef="Any"/>
+        <semantic:informationRequirement id="_04a315bf-1d87-4570-bedd-ffe6935480e7" triso:readOnly="false">
+            <semantic:requiredInput href="#_8473d5d6-1e8c-4853-9a4d-cd5ee77abf69"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_dee31264-ad5e-44f7-98bb-08d7414eb188" triso:readOnly="false">
+            <semantic:requiredDecision href="#_c4aa3977-9b7d-4b7d-9f04-d094c078ec0c"/>
+        </semantic:informationRequirement>
+        <semantic:decisionTable triso:descriptionVisible="false" id="_2cc5059d-8e50-4f7d-933d-2eb84cf3cc07" hitPolicy="FIRST" outputLabel="Calories Conscious Filter" typeRef="Any" triso:expressionId="_d9350a48-68ae-4e00-b488-64ca72191c09">
+            <semantic:input id="_b27202d3-b06f-4296-b862-87140a4ad642" triso:allowNull="false" label="Calories-conscious">
+                <semantic:inputExpression typeRef="caloriesList">
+                    <semantic:text>Calories-conscious</semantic:text>
+                </semantic:inputExpression>
+                <semantic:inputValues triso:constraintsType="enumeration">
+                    <semantic:text>"&lt; 400","&gt;= 400 &lt; 600","&gt;= 600"</semantic:text>
+                </semantic:inputValues>
+            </semantic:input>
+            <semantic:output id="_f497c747-866a-4d56-a963-f1fb982f9610" triso:allowNull="true"/>
+            <semantic:annotation name="Description"/>
+            <semantic:rule id="_963dad26-3d4b-4a75-91a4-4f695a4c710d">
+                <semantic:inputEntry id="_c42cc5cf-c68d-48a4-9721-80b508a462c1">
+                    <semantic:text>"&lt; 400"</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_6638219d-1bd5-459f-bd0c-ab33814a1484">
+                    <semantic:text>Meals[ sum(item.ingredients.calories) &lt; 400 ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_a15bd6a8-c753-49d1-9708-a120737b4751">
+                <semantic:inputEntry id="_84c81468-d6df-4914-98f7-31c8dfb046a3">
+                    <semantic:text>"&gt;= 400 &lt; 600"</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_a65807c8-3369-49bb-831a-fad82f99e5d9">
+                    <semantic:text>Meals[ sum(item.ingredients.calories) in [400..600] ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_fe3af5ca-dc24-4a8b-81e8-94226ab853d3">
+                <semantic:inputEntry id="_03f3fbda-5b2d-44b4-8088-989d25f41ce3">
+                    <semantic:text>"&gt;= 600"</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_dd487a72-acbe-4dec-bd14-67e58d35c60e">
+                    <semantic:text>Meals[ sum(item.ingredients.calories) &gt;= 600 ]</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+            <semantic:rule id="_0879f05c-e12a-419e-bf5e-ac2ba996405d">
+                <semantic:inputEntry id="_a7e08a66-c235-4c75-8e76-8b344997c621">
+                    <semantic:text>-</semantic:text>
+                </semantic:inputEntry>
+                <semantic:outputEntry id="_70708067-33df-4a59-9cde-87d5dd92a0cf">
+                    <semantic:text>Meals</semantic:text>
+                </semantic:outputEntry>
+                <semantic:annotationEntry>
+                    <semantic:text/>
+                </semantic:annotationEntry>
+            </semantic:rule>
+        </semantic:decisionTable>
+    </semantic:decision>
+    <semantic:knowledgeSource id="_77e4b37b-0e3d-4785-b75d-578edb4aabc1" name="Resturant Base" triso:readOnly="false">
+        <semantic:authorityRequirement id="_28cfaae7-9e17-4b9b-bd6c-1521a0ce4287" triso:readOnly="false">
+            <semantic:requiredDecision href="#_c4aa3977-9b7d-4b7d-9f04-d094c078ec0c"/>
+        </semantic:authorityRequirement>
+    </semantic:knowledgeSource>
+    <semantic:decision id="_1fe26703-b2c6-45c8-98e4-74505158890a" name="PersonalizedMenu" triso:readOnly="false" triso:useOutputTypeAsAnswer="false">
+        <semantic:variable name="PersonalizedMenu" id="_3e658f6a-f32a-4605-a121-6edb6d127f7f" typeRef="Any"/>
+        <semantic:informationRequirement id="_5e5d7245-2bbb-4a1e-99cc-f142c8f1b3cb" triso:readOnly="false">
+            <semantic:requiredDecision href="#_36ac082e-d28b-4498-acbd-1337d3e43ae7"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_c068149d-c42a-41d0-bf55-4347ac978227" triso:readOnly="false">
+            <semantic:requiredDecision href="#_c1cde024-5d1c-4851-aa32-b56de4b498b6"/>
+        </semantic:informationRequirement>
+        <semantic:informationRequirement id="_59d6e981-7737-4ed0-9286-9550b568c45b" triso:readOnly="false">
+            <semantic:requiredDecision href="#_d548fc9f-1d85-4df8-b25b-0e7632a66e88"/>
+        </semantic:informationRequirement>
+        <semantic:knowledgeRequirement id="_f29e3279-3c6e-4506-b34c-4c37d2a583f2" triso:readOnly="false">
+            <semantic:requiredKnowledge href="#_506780f5-624e-4daa-a09f-5fa4d2728aa0"/>
+        </semantic:knowledgeRequirement>
+        <semantic:context id="_5cdada36-e154-403a-b7c6-772415bbbdc3" triso:descriptionVisible="false" typeRef="Any" triso:expressionId="_71f5ebba-2f6f-4c77-b12f-580f49e7c57f">
+            <semantic:contextEntry id="_c316dd00-8ee3-4b43-8b36-81491a924188">
+                <semantic:variable name="FilteredMenu" id="_8f7b75d1-e130-4dae-b232-be79610dae94" typeRef="Any"/>
+                <semantic:literalExpression id="_99c53957-3d34-41c9-8681-e9942425db58" triso:descriptionVisible="false">
+                    <semantic:text>Allergies Filter[
+  list contains(Diet Type Filter, item) and 
+  list contains(Calories Conscious Filter, item)
+]</semantic:text>
+                </semantic:literalExpression>
+            </semantic:contextEntry>
+            <semantic:contextEntry id="_06a2a8e5-0846-405c-baf8-b3c6319b2ae5">
+                <semantic:literalExpression id="_d7c1eb95-0a39-412a-bdc5-89febfa6aa57" triso:descriptionVisible="false">
+                    <semantic:text>if count(FilteredMenu) &gt; 0 then {
+  FinalMenu: FilteredMenu,
+  DishesRate: "Based on our guests' preferences and the filters you've selected, we recommend the following dishes: " + string(Dishes Rate(FilteredMenu))
+
+} else {
+  FinalMenu: "No dishes available based on your preferences.",
+  DishesRate: []
+}</semantic:text>
+                </semantic:literalExpression>
+            </semantic:contextEntry>
+        </semantic:context>
+    </semantic:decision>
+    <semantic:businessKnowledgeModel id="_506780f5-624e-4daa-a09f-5fa4d2728aa0" name="Dishes Rate" triso:readOnly="false">
+        <semantic:variable name="Dishes Rate" id="_5f2a9fba-25df-4e55-9e5d-bc5a1339e229" typeRef="Any"/>
+        <semantic:encapsulatedLogic id="_77b03282-c680-47de-8737-6217ec5f0e52" kind="FEEL" triso:descriptionVisible="false" typeRef="Any" triso:expressionId="_70b8a9ff-be5c-45e7-b00d-03817db8422b">
+            <semantic:formalParameter name="MenuFilteredByUserPreferences" typeRef="Any" id="_c90f81f2-3fa6-4d3e-b7e0-de372c813463"/>
+            <semantic:literalExpression typeRef="Any" id="_e088620d-acde-464d-827e-bf82afe1d474">
+                <semantic:text>for c in distinct values(MenuFilteredByUserPreferences.course) 
+return (
+  if count(MenuFilteredByUserPreferences[course = c]) &gt; 0 then
+    sort(MenuFilteredByUserPreferences[course = c], function(a, b) a.rate &gt; b.rate)[1].name
+  else
+    []
+)</semantic:text>
+            </semantic:literalExpression>
+        </semantic:encapsulatedLogic>
+    </semantic:businessKnowledgeModel>
+    <semantic:inputData id="_1d08416e-dcc2-424e-9f3d-3f148e0fdb3e" name="Sulfur dioxide and sulfites allergic" triso:readOnly="false">
+        <semantic:variable name="Sulfur dioxide and sulfites allergic" id="_ff3416be-30cf-430a-9d64-8cc87900cdf2" typeRef="boolean"/>
+    </semantic:inputData>
+    <semantic:inputData id="_8d150dc6-8206-4fcf-99e8-f9bc3cc8cb88" name="Tree nuts allergic" triso:readOnly="false">
+        <semantic:variable name="Tree nuts allergic" id="_f056ae4b-1e6f-4aa9-a1fd-55f2c6c66d59" typeRef="boolean"/>
+    </semantic:inputData>
+    <semantic:inputData id="_5bfd9110-bf76-4751-be4a-c3c1a67e5d90" name="Gluten allergic" triso:readOnly="false">
+        <semantic:variable name="Gluten allergic" id="_80b12990-4b6d-47fc-a66e-410107b7d846" typeRef="boolean"/>
+    </semantic:inputData>
+    <semantic:inputData id="_48976f47-4bce-4fb3-b70e-7a2c0a84fee0" name="Milk allergic" triso:readOnly="false">
+        <semantic:variable name="Milk allergic" id="_475eb45d-3248-4d0b-ad70-ab52c9d3d214" typeRef="boolean"/>
+    </semantic:inputData>
+    <semantic:inputData id="_586a3a52-7a50-47e8-bd6b-be03051b84c2" name="Lupins allergic" triso:readOnly="false">
+        <semantic:variable name="Lupins allergic" id="_da733bcb-fc0c-4624-a3e5-f6ea97b690e2" typeRef="boolean"/>
+    </semantic:inputData>
+    <semantic:inputData id="_7f06b574-2743-4ccc-8f14-762350096bd0" name="Mollusks allergic" triso:readOnly="false">
+        <semantic:variable name="Mollusks allergic" id="_d24d4ba8-a026-48cb-92a4-92ab1d72c96d" typeRef="boolean"/>
+    </semantic:inputData>
+    <semantic:inputData id="_0ead6652-e2e2-4a03-88fd-a06c7eec0978" name="Fish allergic" triso:readOnly="false">
+        <semantic:variable name="Fish allergic" id="_353942ce-744f-4963-948a-d8bf8f3221b5" typeRef="boolean"/>
+    </semantic:inputData>
+    <semantic:inputData id="_14ec6e54-e8d4-4c4f-8948-7023f9228f28" name="Celery allergic" triso:readOnly="false">
+        <semantic:variable name="Celery allergic" id="_03944c5e-6759-4bc1-825d-ab56a2193b13" typeRef="boolean"/>
+    </semantic:inputData>
+    <semantic:inputData id="_4eabbc3b-b578-43ab-9a3b-cf7e56c9fddb" name="Sesame seeds allergic" triso:readOnly="false">
+        <semantic:variable name="Sesame seeds allergic" id="_a0bfb716-b447-4caa-badd-613c76f14111" typeRef="boolean"/>
+    </semantic:inputData>
+    <semantic:inputData id="_c0208db3-1bb9-430f-ad7d-c5ee4388352b" name="Soy allergic" triso:readOnly="false">
+        <semantic:variable name="Soy allergic" id="_e4170bd8-7a4a-427e-b1ed-a4ee766d1b08" typeRef="boolean"/>
+    </semantic:inputData>
+    <semantic:inputData id="_689d60a8-f44b-4f41-a6b6-5c269b10caae" name="Eggs allergic" triso:readOnly="false">
+        <semantic:variable name="Eggs allergic" id="_ebdaf574-20ec-4959-86a3-c958594662bc" typeRef="boolean"/>
+    </semantic:inputData>
+    <ns1:DMNDI>
+        <ns1:DMNDiagram id="_9f47c194-8d20-41d1-b365-4db32894ea11" triso:modelElementRef="_85f78ba3-117c-4da2-9246-bdb16eb567fb" name="Page 1">
+            <di:extension/>
+            <ns1:Size height="1054.0000038146973" width="1925"/>
+            <ns1:DMNShape id="_67e9203c-f258-49a9-a78c-d5e9408ab078" dmnElementRef="_52a8b5ca-8c52-409c-8e93-83e6a0aa5083">
+                <dc:Bounds x="951.7588291168213" y="741.9999961853027" width="135.48234176635742" height="60.00000762939453"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_59c3d3fa-216d-40f5-8fa1-bc507827751f" dmnElementRef="_c4aa3977-9b7d-4b7d-9f04-d094c078ec0c">
+                <dc:Bounds x="628" y="634" width="153" height="60"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_757ae881-c479-40f7-bd72-88b8d3512570" dmnElementRef="_d548fc9f-1d85-4df8-b25b-0e7632a66e88">
+                <dc:Bounds x="943" y="429" width="153" height="60"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_4f715435-515f-4677-a2ee-9dc0b152d518" dmnElementRef="_36ac082e-d28b-4498-acbd-1337d3e43ae7">
+                <dc:Bounds x="943" y="634" width="153" height="60"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_20e33c63-0251-4db4-93f0-7167b8089617" dmnElementRef="_8473d5d6-1e8c-4853-9a4d-cd5ee77abf69">
+                <dc:Bounds x="951.7588291168213" y="968.9999961853027" width="135.48234176635742" height="60.00000762939453"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_cca8269b-0ead-4e50-90bb-fab510fe06b1" dmnElementRef="_c1cde024-5d1c-4851-aa32-b56de4b498b6">
+                <dc:Bounds x="943" y="855" width="153" height="60"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_dd86b3c5-cc99-49a9-bc1a-78b181cc5dae" dmnElementRef="_77e4b37b-0e3d-4785-b75d-578edb4aabc1">
+                <dc:Bounds x="445.5" y="629.0213203430176" width="100" height="69.95735931396484"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_fef66027-3002-4c14-a159-1a4711b82f4a" dmnElementRef="_1fe26703-b2c6-45c8-98e4-74505158890a">
+                <dc:Bounds x="1404.3333276377787" y="633.9999748071045" width="153" height="60"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_ffc0a0f7-7087-4e15-a7c0-78ff83f8b913" dmnElementRef="_506780f5-624e-4daa-a09f-5fa4d2728aa0">
+                <dc:Bounds x="1404.3333276377787" y="483.3333129353001" width="153" height="60"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_a217d59e-e098-4adb-8985-21a95655a229" dmnElementRef="_1d08416e-dcc2-424e-9f3d-3f148e0fdb3e">
+                <dc:Bounds x="93.75882911682129" y="155.99999618530273" width="135.48234176635742" height="60.00000762939453"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_f23c5fe9-0119-497e-8598-0cf075708ba0" dmnElementRef="_8d150dc6-8206-4fcf-99e8-f9bc3cc8cb88">
+                <dc:Bounds x="251.2588291168213" y="155.99999618530273" width="135.48234176635742" height="60.00000762939453"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_60c95439-7cda-4517-8fd6-0a55094971c2" dmnElementRef="_5bfd9110-bf76-4751-be4a-c3c1a67e5d90">
+                <dc:Bounds x="413.2588291168213" y="155.99999618530273" width="135.48234176635742" height="60.00000762939453"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_1a8f0e15-3b6e-4f6e-9b24-3bc1652a4dd0" dmnElementRef="_48976f47-4bce-4fb3-b70e-7a2c0a84fee0">
+                <dc:Bounds x="576.2588291168213" y="155.99999618530273" width="135.48234176635742" height="60.00000762939453"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_6a533f02-0b98-4474-836b-ce002a959278" dmnElementRef="_586a3a52-7a50-47e8-bd6b-be03051b84c2">
+                <dc:Bounds x="739.2588291168213" y="155.99999618530273" width="135.48234176635742" height="60.00000762939453"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_b174a153-b846-4d0a-99ed-6a5ffdcb7c5d" dmnElementRef="_7f06b574-2743-4ccc-8f14-762350096bd0">
+                <dc:Bounds x="901.2588291168213" y="155.99999618530273" width="135.48234176635742" height="60.00000762939453"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_de58643e-cf29-46a2-b635-ad8c77553a5b" dmnElementRef="_0ead6652-e2e2-4a03-88fd-a06c7eec0978">
+                <dc:Bounds x="1058.2588291168213" y="155.99999618530273" width="135.48234176635742" height="60.00000762939453"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_fc2efbbc-c181-4aa6-8741-66331a2cc075" dmnElementRef="_14ec6e54-e8d4-4c4f-8948-7023f9228f28">
+                <dc:Bounds x="1225.2588291168213" y="155.99999618530273" width="135.48234176635742" height="60.00000762939453"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_a96d0cdb-6f8a-4c95-8b27-f043528856ad" dmnElementRef="_4eabbc3b-b578-43ab-9a3b-cf7e56c9fddb">
+                <dc:Bounds x="1385.2588291168213" y="155.99999618530273" width="135.48234176635742" height="60.00000762939453"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_9de913c2-bd3a-475d-bb54-48a924f04aed" dmnElementRef="_c0208db3-1bb9-430f-ad7d-c5ee4388352b">
+                <dc:Bounds x="1547.2588291168213" y="155.99999618530273" width="135.48234176635742" height="60.00000762939453"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNShape id="_aa9f9249-ca64-454a-af50-17018b9e028e" dmnElementRef="_689d60a8-f44b-4f41-a6b6-5c269b10caae">
+                <dc:Bounds x="1702.2588291168213" y="155.99999618530273" width="135.48234176635742" height="60.00000762939453"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" trisodmn:defaultBounds="true"/>
+            </ns1:DMNShape>
+            <ns1:DMNEdge id="_104c0257-44de-4769-b221-34307c144b66" dmnElementRef="_72103399-e3e0-40d3-b61a-945cacd2a5a7">
+                <di:waypoint x="1019.4968013763428" y="741.9999961853027"/>
+                <di:waypoint x="1019.5" y="694"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_c836f87a-2cdf-4e5a-b058-ad09b92a39d2" dmnElementRef="_04a315bf-1d87-4570-bedd-ffe6935480e7">
+                <di:waypoint x="1019.4968013763428" y="968.9999961853027"/>
+                <di:waypoint x="1019.5" y="915"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_1201c739-c519-4e4a-8988-1257a9265bce" dmnElementRef="_ce7182c7-6f51-4199-b885-eaf3a5765f93">
+                <di:waypoint x="781" y="664"/>
+                <di:waypoint x="943" y="664"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_9e344e00-0e9b-4319-9c98-cfc46757c522" dmnElementRef="_dee31264-ad5e-44f7-98bb-08d7414eb188">
+                <di:waypoint x="704.5" y="694"/>
+                <di:waypoint x="704.5" y="875"/>
+                <di:waypoint x="943" y="875"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_2e19c3a4-33fc-4177-bc78-7c2602d272ea" dmnElementRef="_be8c80d9-6b97-407f-af00-14c5e6491d78">
+                <di:waypoint x="704.5" y="634"/>
+                <di:waypoint x="704.5" y="459"/>
+                <di:waypoint x="943" y="459"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_a8fc3fe9-70de-4759-a498-dd42503493c9" dmnElementRef="_28cfaae7-9e17-4b9b-bd6c-1521a0ce4287">
+                <di:waypoint x="628" y="664"/>
+                <di:waypoint x="545.5" y="664"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_3c022e5a-a8e3-428e-958d-e474a8b8efb3" dmnElementRef="_5e5d7245-2bbb-4a1e-99cc-f142c8f1b3cb">
+                <di:waypoint x="1096" y="664"/>
+                <di:waypoint x="1404.3333276377787" y="663.9999748071045"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_3189651c-b3a1-4b72-af8c-03ff7e258dc6" dmnElementRef="_c068149d-c42a-41d0-bf55-4347ac978227">
+                <di:waypoint x="1096" y="885"/>
+                <di:waypoint x="1175.5" y="885"/>
+                <di:waypoint x="1314.3888833699405" y="885"/>
+                <di:waypoint x="1314.3888833699405" y="778.9444324623936"/>
+                <di:waypoint x="1314.3888833699405" y="683.9999748071045"/>
+                <di:waypoint x="1404.3333276377787" y="683.9999748071045"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_921d49b4-7e8e-4354-8608-71f57d5dc330" dmnElementRef="_59d6e981-7737-4ed0-9286-9550b568c45b">
+                <di:waypoint x="1096" y="459"/>
+                <di:waypoint x="1175.5" y="459"/>
+                <di:waypoint x="1314.3888833699405" y="459"/>
+                <di:waypoint x="1314.3888833699405" y="560.3888885356763"/>
+                <di:waypoint x="1314.3888833699405" y="643.9999748071045"/>
+                <di:waypoint x="1404.3333276377787" y="643.9999748071045"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_2131c903-0a94-4484-99f1-2cb782a0ca85" dmnElementRef="_f29e3279-3c6e-4506-b34c-4c37d2a583f2">
+                <di:waypoint x="1481.3333276377787" y="543.3333129353001"/>
+                <di:waypoint x="1480.8333276377787" y="633.9999748071045"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_11bdaa3d-598e-4478-9625-7713752c51ae" dmnElementRef="_b94dff42-1b7b-4b07-878e-9bb31c0a9f7b">
+                <di:waypoint x="151.49680137634277" y="215.99999618530273"/>
+                <di:waypoint x="151.49680137634277" y="336.49999809265137"/>
+                <di:waypoint x="1009.5" y="336.49999809265137"/>
+                <di:waypoint x="1009.5" y="383.7499990463257"/>
+                <di:waypoint x="1009.5" y="429"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_82d822ce-3ccb-4858-8a25-0e95e7864a81" dmnElementRef="_c76bb61d-6545-46e9-9d27-cf9f70c4afc2">
+                <di:waypoint x="318.9968013763428" y="215.99999618530273"/>
+                <di:waypoint x="318.9968013763428" y="319.49999809265137"/>
+                <di:waypoint x="1019.5" y="319.49999809265137"/>
+                <di:waypoint x="1019.5" y="429"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_f5e2f814-0b8e-4e7e-a776-69d3dc8e446f" dmnElementRef="_48efa28a-6b84-49b4-a818-17cedc7a1a1f">
+                <di:waypoint x="480.9968013763428" y="215.99999618530273"/>
+                <di:waypoint x="480.9968013763428" y="308.49999809265137"/>
+                <di:waypoint x="1019.5" y="308.49999809265137"/>
+                <di:waypoint x="1019.5" y="429"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_dcb5fd28-fc3b-4fa4-938d-6130959203a7" dmnElementRef="_e6de70eb-e699-4864-a2b5-e96fc389ec0f">
+                <di:waypoint x="643.9968013763428" y="215.99999618530273"/>
+                <di:waypoint x="643.9968013763428" y="294.49999809265137"/>
+                <di:waypoint x="1019.5" y="294.49999809265137"/>
+                <di:waypoint x="1019.5" y="429"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_6de82931-d9d4-498b-8c99-7f8377fcc0b0" dmnElementRef="_741de5a9-95aa-42e2-a149-836bf48da552">
+                <di:waypoint x="806.9968013763428" y="215.99999618530273"/>
+                <di:waypoint x="806.9968013763428" y="280.49999809265137"/>
+                <di:waypoint x="1019.5" y="280.49999809265137"/>
+                <di:waypoint x="1019.5" y="429"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_8b090847-bac3-439c-a53f-283c0dade1bf" dmnElementRef="_95bcca98-7a99-4e65-89c2-bae31af9c107">
+                <di:waypoint x="968.9968013763428" y="215.99999618530273"/>
+                <di:waypoint x="968.9968013763428" y="269.2631217303798"/>
+                <di:waypoint x="1019.5" y="269.2631217303798"/>
+                <di:waypoint x="1019.5" y="429"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_b2e252bb-c2db-442b-9cc5-a4e803003f21" dmnElementRef="_b3b8974d-7fda-4426-a2c5-58fa91a4a6b3">
+                <di:waypoint x="1125.9968013763428" y="215.99999618530273"/>
+                <di:waypoint x="1125.9968013763428" y="269.29058451014873"/>
+                <di:waypoint x="1029.5" y="269.29058451014873"/>
+                <di:waypoint x="1029.5" y="429"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_7deacc93-94ed-4700-b3d1-82d82ecd4368" dmnElementRef="_fab5def8-87b6-417e-9275-6c7d82a8c27b">
+                <di:waypoint x="1452.9968013763428" y="215.99999618530273"/>
+                <di:waypoint x="1452.9968013763428" y="295.49999809265137"/>
+                <di:waypoint x="1029.5" y="295.49999809265137"/>
+                <di:waypoint x="1029.5" y="429"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_e2946ab1-d379-4aea-8d88-4063acddefff" dmnElementRef="_6ebd6252-3670-4dc7-906e-67b22d9000ec">
+                <di:waypoint x="1614.9968013763428" y="215.99999618530273"/>
+                <di:waypoint x="1614.9968013763428" y="309.49999809265137"/>
+                <di:waypoint x="1019.5" y="309.49999809265137"/>
+                <di:waypoint x="1019.5" y="429"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_b8b9567c-7ed7-4966-98fe-75f224bd264e" dmnElementRef="_c16dc658-1c2d-4965-a308-621d3ef1d77e">
+                <di:waypoint x="1769.9968013763428" y="215.99999618530273"/>
+                <di:waypoint x="1769.9968013763428" y="322.49999809265137"/>
+                <di:waypoint x="1029.5" y="322.49999809265137"/>
+                <di:waypoint x="1029.5" y="429"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+            <ns1:DMNEdge id="_0d8750cc-2064-4fee-9674-58184b7cb9df" dmnElementRef="_be680136-2fcf-4545-84a4-94e4f202ad74">
+                <di:waypoint x="1292.9968013763428" y="215.99999618530273"/>
+                <di:waypoint x="1292.9968013763428" y="281.49999809265137"/>
+                <di:waypoint x="1019.5" y="281.49999809265137"/>
+                <di:waypoint x="1019.5" y="429"/>
+                <ns1:DMNLabel sharedStyle="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0"/>
+            </ns1:DMNEdge>
+        </ns1:DMNDiagram>
+        <ns1:DMNStyle id="LS_2b974770-bd34-43db-82aa-937e703a8bb7_0" fontFamily="arial,helvetica,sans-serif" fontSize="11" fontBold="false" fontItalic="false" fontUnderline="false" fontStrikeThrough="false"/>
+    </ns1:DMNDI>
+</semantic:definitions>
