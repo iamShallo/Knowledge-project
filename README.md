@@ -1,5 +1,9 @@
 # Knowledge-project
 
+# Group members 
+Francesco Caldarelli - 132380 
+Edoardo Papa - 131313
+
 ## Overview
 
 Many restaurants have digital menus accessible via QR codes. While convenient, these digital menus can be difficult to navigate—especially when large—and they often fail to account for guests' dietary preferences or restrictions. 
