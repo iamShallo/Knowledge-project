@@ -1,0 +1,9 @@
+personalized_menu([eggs, gluten], _, medium, Result).
+
+
+profile_vegetarian_medium(Result).
+profile_vegan_low(Result).
+profile_pescatarian_no_gluten(Result).
+
+profile(lucrezia, Result).
+profile(edoardo, Result).
