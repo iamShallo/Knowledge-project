@@ -1,0 +1,109 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#>
+
+# 1. Retrieve subclass relationships in the ontology
+SELECT ?subject ?object
+WHERE { 
+  ?subject rdfs:subClassOf ?object 
+}
+
+# 2. Select dishes classified as having less than 400 calories
+SELECT ?dish
+WHERE {
+  ?dish a :Dish ;
+        :has_calories :less_than_400 .
+}
+
+# 3. Select all dishes categorized under the vegan diet
+SELECT ?dish
+WHERE {
+  ?dish a :Dish ;
+        :has_associated_category :vegan .
+}
+
+# 4. Find dishes that have gluten listed as an allergen
+SELECT ?dish
+WHERE {
+  ?dish a :Dish ;
+        :has_allergen :gluten .
+}
+
+# 5. Retrieve desserts with a customer rating greater than 4.0
+SELECT ?dish ?rating
+WHERE {
+  ?dish a :Dessert ;
+        :has_customer_rate ?rating .
+  FILTER(?rating > 4.0)
+}
+
+# 6. Select dishes categorized as having calories in the 400–600 range
+SELECT ?dish
+WHERE {
+  ?dish a :Dish ;
+        :has_calories :between_400_and_600 .
+}
+
+# 7. Find vegetarian dishes that list eggs as an ingredient
+SELECT ?dish
+WHERE {
+  ?dish a :Dish ;
+        :has_associated_category :vegetarian ;
+        :has_ingredient :eggs .
+}
+
+# 8. Get dishes classified in the "more than 600 calories" category
+SELECT ?dish
+WHERE {
+  ?dish a :Dish ;
+        :has_calories :more_than_600 .
+}
+
+# 9. Extract unique ingredients used in vegan dishes
+SELECT DISTINCT ?ingredient
+WHERE {
+  ?dish a :Dish ;
+        :has_associated_category :vegan ;
+        :has_ingredient ?ingredient .
+}
+
+# 10. Select first-course dishes with fewer than 600 calories
+SELECT ?dish ?calories
+WHERE {
+  ?dish a :First ;
+        :has_dish_calories ?calories .
+  FILTER(?calories < 600)
+}
+
+# 11. Find dishes that are not linked to any allergens
+SELECT ?dish
+WHERE {
+  ?dish a :Dish .
+  FILTER NOT EXISTS {
+    ?dish :has_allergen ?allergen .
+  }
+}
+
+# 12. Select all dishes (View all characteristics for each)
+
+SELECT
+  ?dish
+  ?calories
+  ?rating
+  ?category
+  (GROUP_CONCAT(DISTINCT ?ingredient; separator=", ") AS ?ingredients)
+  (GROUP_CONCAT(DISTINCT ?allergen; separator=", ") AS ?allergens)
+WHERE {
+  ?dish rdf:type :Dish .
+
+  OPTIONAL { ?dish :has_dish_calories ?cal . BIND(STR(?cal) AS ?calories) }
+  OPTIONAL { ?dish :has_customer_rate ?rate . BIND(STR(?rate) AS ?rating) }
+  OPTIONAL { ?dish :has_associated_category ?cat . BIND(STR(?cat) AS ?category) }
+  OPTIONAL { ?dish :has_ingredient ?ing . BIND(STR(?ing) AS ?ingredient) }
+  OPTIONAL { ?dish :has_allergen ?all . BIND(STR(?all) AS ?allergen) }
+}
+GROUP BY ?dish ?calories ?rating ?category
+ORDER BY ?dish
+ 

@@ -1,0 +1,53 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex:    <http://www.example.org/#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix : <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#>
+
+#####################################################################
+# DishShape – every :Dish must have ingredients, calories and rating
+#####################################################################
+:DishShape
+  a sh:NodeShape ;
+  sh:targetClass :Dish ;
+
+  # At least 1 ingredient
+  sh:property [
+    sh:path :has_ingredient ;
+    sh:minCount 1 ;
+  ] ;
+
+  # Exactly 1 integer value for calories 
+  sh:property [
+    sh:path :has_dish_calories ;
+    sh:datatype xsd:integer ;
+    sh:minCount 1 ; sh:maxCount 1 ;
+  ] ;
+
+  # Rating of customer (0–5)
+  sh:property [
+    sh:path :has_customer_rate ;
+    sh:datatype xsd:float ;
+    sh:minInclusive 0 ; sh:maxInclusive 5 ;
+    sh:maxCount 1 ;
+  ] ;
+
+  sh:property [
+    sh:path :has_associated_category ;
+    sh:in ( :vegetarian :carnivore :pescatarian :vegan ) ;
+    sh:minCount 1 ;  # obbligatoria
+  ] .
+
+:LabelValidationShape
+  a sh:NodeShape ;
+  sh:targetSubjectsOf rdfs:label ;  # Applica la validazione a chi ha rdfs:label
+  sh:property [
+    sh:path rdfs:label ;
+    sh:datatype xsd:string ;
+    sh:minLength 3 ;
+    sh:maxLength 100 ;
+    sh:pattern "^[a-z].*" ;  # Deve iniziare con lettera maiuscola
+    sh:message "L'etichetta deve iniziare con una lettera maiuscola e avere una lunghezza tra 3 e 100 caratteri." ;
+  ] .
