@@ -1,8 +1,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Facts related to dishes, their properties, and ingredients  %%
+%% 	Facts related to dishes, their properties, and ingredients  %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-/* --- Dish (dishes) --- */
+% Edoardo's Allergies
+is_allergic(edoardo, gluten).
+is_allergic(edoardo, eggs).
+% Lucrezia's Allergies
+is_allergic(lucrezia, gluten).
+
+% Edoardo's diet type
+person_diet(edoardo, vegan).
+% Lucrezia's diet type
+person_diet(lucrezia, carnivore).
+
+/* --- Dishes --- */
 meal(lasagna_with_meat_sauce).
 meal(pumpkin_risotto).
 meal(legume_soup).
@@ -100,6 +111,7 @@ recipe_ingredient(sesame_cake, sesame_seeds).
 recipe_ingredient(sesame_cake, sugar).
 
 
+
 /* --- Allergen definitions --- */
 allergen(lasagna_with_meat_sauce, gluten).
 allergen(lasagna_with_meat_sauce, eggs).
@@ -168,7 +180,7 @@ diet(chocolate_soy_pudding, vegan).
 diet(cream_ice_cream, vegetarian).
 diet(sesame_cake, vegan).
 
-/* --- Course type --- */
+/* --- Course Type  --- */
 course(lasagna_with_meat_sauce, main).
 course(pumpkin_risotto, main).
 course(legume_soup, main).
@@ -228,15 +240,16 @@ rating(chocolate_soy_pudding, 4.5).
 rating(cream_ice_cream, 2.7).
 rating(sesame_cake, 4.5).
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Filter predicates for the menu     %%
+%% Filter predicates for the menu   %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Filters dishes by excluding those that contain at least one ingredient present in the Allergies list
+% Filters dishes by excluding those that contain at least one ingredient on the Allergy list
 allergens_excluded(Meal, Allergens) :-
     \+ ( allergen(Meal, Ingredient), member(Ingredient, Allergens) ).
 
-% Checks that the dish's diet type is compatible with the preference
+% Checks that the type of diet of the dish is compatible with the preference
 type_diet_compatible(Meal, Dieta) :-
     diet(Meal, Dieta).
 
@@ -260,10 +273,10 @@ calories_compatible(Meal, high) :-
 
 		
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Predicates for "Dishes Rate by Course"        %%
+%% Predicates for "Dishes Rate by Course"         %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-/* 1. Extracts distinct courses from the filtered dishes */
+/* 1. Extracts distinct courses from filtered dishes */
 distinct_courses(FilteredDishes, DistinctCourses) :-
     findall(Course,
         ( member(Dish, FilteredDishes),
@@ -272,34 +285,35 @@ distinct_courses(FilteredDishes, DistinctCourses) :-
         Courses),
     sort(Courses, DistinctCourses).
 
-/* 2. Filters dishes based on course */
-%%% If the dish list is empty, then the filtered list will also be empty
+/* 2. Filter dishes based on course */
+%%% If the plate list is empty, then the filtered list will also be empty
 filter_by_course([], _, []).
 
-%%% Takes the main dish (Dish) and the rest of the list (Rest)
-%%%   Checks: course(Dish, Course) -> if this dish is of the desired course
-%%%   If true: - includes it in the filtered list ([Dish|Filtered]) 
-%%%            - continues filtering the rest (Rest) with the same rule
+%%% Takes the main course (Dish) and the rest of the list (Rest).
+%%% 	Checks: course(Dish, Course) -> so if this pic is from the course I want
+%%% 	If true: - includes it in the filtered list ([Dish|Filtered]). 
+%%% 			 - continues filtering the rest (Rest) with the same rule.
 filter_by_course([Dish|Rest], Course, [Dish|Filtered]) :-
     course(Dish, Course),
     filter_by_course(Rest, Course, Filtered).
 
 %%% Takes the main dish (Dish) and the rest of the list (Rest)
-%%%   Checks: course(Dish, Course) -> if this dish is of the desired course
-%%%   Verifies: that Dish has a course different from the one requested (Other \= Course)
+%%%   Check: course(Dish, Course) -> so if this pic is from the course I want
+%%%   Verification: that Dish has a course other than the one requested (Other \= Course)
 %%%   If true: - does not include it in the filtered list
-%%%            - continues processing Rest normally
+%%%            - continues to process Rest normally
 filter_by_course([Dish|Rest], Course, Filtered) :-
     course(Dish, Other),
     Other \= Course, % must be different
     filter_by_course(Rest, Course, Filtered).
 
 
-/* 3. Sorts dishes by rating in descending order */
 
-%%% map_list_to_pairs: Creates pairs (dish, rating) by applying the predicate dish_rating/2 to each element of the Dishes list.
+/* 3. Sort the dishes by rating in descending order */
+
+%%% map_list_to_pairs: Creates pairs (dish, rating) by applying the predicate dish_rating/2 on each element of the Dishes list.
 %%% keysort: Sorts the pairs in ascending order based on rating
-%%% reverse and pairs_values: Reverses the order to obtain a list of dishes sorted by descending rating, extracting only the dishes from the sorted list of pairs
+%%% reverse and pairs_values: Reverses the order to obtain a list of dishes in descending order by rating, extracting only dishes from the ordered list of pairs
 sort_by_rating_desc(Dishes, Sorted) :-
     map_list_to_pairs(dish_rating, Dishes, Pairs),
     keysort(Pairs, SortedAsc),
@@ -311,19 +325,19 @@ dish_rating(Dish, Rating) :-
 
 
 
-/* 4. For a given course, returns the best dish (with the highest rating) or null if none are available */
+/* 4. For a given course, it returns the best dish (with the highest rating) or null if none are available */
 
-%%% filter_by_course: Filters the dishes in FilteredDishes by the specified course, returning only those that belong to Course
-%%% DishesByCourse = [] -> BestDish = null: If the filtered dish list is empty, sets BestDish to null (no available dish for that course).
-%%% sort_by_rating_desc: Sorts the dishes by descending rating and assigns the best dish (the head of the list) to BestDish.
+%%% filter_by_course: Filters the dishes in FilteredDishes for the specified course, returning only those belonging to the course Course
+%%% DishesByCourse = [] -> BestDish = null: If the list of filtered dishes is empty, set BestDish to null (no dishes available for that course).
+%%% sort_by_rating_desc: Sort the dishes by rating in descending order and assign the best dish (the main one in the list) to BestDish.
 best_dish_by_course(FilteredDishes, Course, BestDish) :-
     filter_by_course(FilteredDishes, Course, DishesByCourse),
     (   DishesByCourse = []
     ->  BestDish = null
-    ;   sort_by_rating_desc(DishesByCourse, [BestDish|_]) % a me serve prendere solamente il main elemento dei piatti ordinati, quindi dopo aver ordinato tramite sort_by_rating_desc, faccio [BestDish|_]
+    ;   sort_by_rating_desc(DishesByCourse, [BestDish|_]) % I only need to get the main element of the dishes ordered, so after ordering via sort_by_rating_desc, I do [BestDish|_]
     ).
 
-/* 5. For each course present in the filtered dishes, returns a pair [Course, BestDish] */
+/* 5. For each course in the filtered dishes, it returns a pair [Course, BestDish] */
 dishes_rate_by_course(FilteredDishes, CourseDishPairs) :-
     distinct_courses(FilteredDishes, DistinctCourses),
     findall([Course, Dish],
@@ -344,7 +358,7 @@ dishes_rate_by_course(FilteredDishes, CourseDishPairs) :-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Predicato personalized_menu/4            %%
+%%  Predicate personalized_menu/4             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 personalized_menu(Allergens, Diet, CaloriesRange, Result) :-
@@ -371,11 +385,48 @@ generate_answer(Meals, Messaggio) :-
 		
 		
 		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Predefined Standard Profiles                            %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/* Profile: Vegetarian host without allergies, average calories  */
+profile_vegetarian_medium(Result) :-
+    personalized_menu([], vegetarian, medium, Result).
+
+/* Profile: Vegan guest with no allergies, low calories */
+profile_vegan_low(Result) :-
+    personalized_menu([], vegan, low, Result).
+
+/* Profile: Gluten-allergic pescetarian host */
+profile_pescatarian_no_gluten(Result) :-
+    personalized_menu([gluten], pescatarian, medium, Result).
+
+/* Profile: Carnivore host without allergies, high calories */
+profile_carnivore_high(Result) :-
+    personalized_menu([], carnivore, high, Result).
+
+/* Profile: Vegetarian host allergic to milk and eggs */
+profile_vegetarian_no_milk_eggs(Result) :-
+    personalized_menu([milk, eggs], vegetarian, medium, Result).
+
+/* Profile: Guest vegan allergic to soy, average calories */
+profile_vegan_no_soy_medium(Result) :-
+    personalized_menu([soy], vegan, medium, Result).
 
 		
 		
-		
-		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Standard Profiles Per Person                             %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+profile(Person, Result) :-
+    person_diet(Person, Diet),
+    findall(Meal,
+        ( meal(Meal),
+          diet(Meal, Diet),
+          \+ ( allergen(Meal, Allergen), is_allergic(Person, Allergen) )
+        ),
+    MealsRes),
+    generate_answer(MealsRes, Result).
 		
 		
 		
