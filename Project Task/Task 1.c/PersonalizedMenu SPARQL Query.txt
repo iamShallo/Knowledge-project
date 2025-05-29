@@ -106,4 +106,35 @@ WHERE {
 }
 GROUP BY ?dish ?calories ?rating ?category
 ORDER BY ?dish
+
+
+
+
+# 13. Returns the dishes that do not contain the selected allergens and match the desired calorie range, belonging to the selected category.
+
+SELECT
+  ?dish
+  (GROUP_CONCAT(DISTINCT ?ingredient; separator=", ") AS ?ingredients)
+  (GROUP_CONCAT(DISTINCT ?allergen; separator=", ") AS ?allergens)
+  ?category
+  ?calories
+  ?rating
+WHERE {
+  ?dish a :Dish ;
+        :has_calories :between_400_and_600 ;           # <--- Change here if you want other result
+        :has_associated_category :vegan .              # <--- Change here if you want other result
+
+  OPTIONAL { ?dish :has_ingredient ?ingredient . }
+  OPTIONAL { ?dish :has_allergen ?allergen . }
+  OPTIONAL { ?dish :has_customer_rate ?rating . }
+  OPTIONAL { ?dish :has_dish_calories ?calories . }
+  OPTIONAL { ?dish :has_associated_category ?category . }
+
+  FILTER NOT EXISTS {
+    ?dish :has_allergen ?excludedAllergen .
+    FILTER(?excludedAllergen IN (:milk))  # <--- Change here if you want other result
+  }
+}
+GROUP BY ?dish ?category ?calories ?rating
+ORDER BY ?dish
  
