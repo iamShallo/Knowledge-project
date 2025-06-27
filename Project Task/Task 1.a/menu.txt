@@ -1,0 +1,450 @@
+[
+  {
+    "name": "Lasagna with Meat Sauce",
+    "ingredients": [
+      {
+        "name": "Egg Pasta",
+        "calories": 300
+      },
+      {
+        "name": "Meat Sauce",
+        "calories": 250
+      },
+      {
+        "name": "Béchamel Sauce",
+        "calories": 200
+      },
+      {
+        "name": "Parmesan",
+        "calories": 100
+      }
+    ],
+    "totalCalories": 850,
+    "category": "carnivore",
+    "course": "main",
+    "allergens": [
+      "gluten",
+      "eggs",
+      "milk"
+    ],
+    "rate": 4.8
+  },
+  {
+    "name": "Pumpkin Risotto",
+    "ingredients": [
+      {
+        "name": "Rice",
+        "calories": 300
+      },
+      {
+        "name": "Pumpkin",
+        "calories": 80
+      },
+      {
+        "name": "Butter",
+        "calories": 150
+      },
+      {
+        "name": "Parmesan",
+        "calories": 120
+      }
+    ],
+    "totalCalories": 650,
+    "category": "vegetarian",
+    "course": "main",
+    "allergens": [
+      "milk"
+    ],
+    "rate": 4.3
+  },
+  {
+    "name": "Legume Soup",
+    "ingredients": [
+      {
+        "name": "Mixed Legumes",
+        "calories": 300
+      },
+      {
+        "name": "Celery",
+        "calories": 20
+      },
+      {
+        "name": "Carrots",
+        "calories": 30
+      },
+      {
+        "name": "Olive Oil",
+        "calories": 80
+      }
+    ],
+    "totalCalories": 430,
+    "category": "vegan",
+    "course": "main",
+    "allergens": [
+      "celery"
+    ],
+    "rate": 3.0
+  },
+  {
+    "name": "Spaghetti with Clams",
+    "ingredients": [
+      {
+        "name": "Spaghetti",
+        "calories": 350
+      },
+      {
+        "name": "Clams",
+        "calories": 150
+      },
+      {
+        "name": "Olive Oil",
+        "calories": 100
+      },
+      {
+        "name": "Parsley",
+        "calories": 10
+      }
+    ],
+    "totalCalories": 610,
+    "category": "pescatarian",
+    "course": "main",
+    "allergens": [
+      "gluten",
+      "mollusks"
+    ],
+    "rate": 2.7
+  },
+  {
+    "name": "Pasta with Walnut Pesto",
+    "ingredients": [
+      {
+        "name": "Pasta",
+        "calories": 350
+      },
+      {
+        "name": "Walnuts",
+        "calories": 200
+      },
+      {
+        "name": "Olive Oil",
+        "calories": 100
+      }
+    ],
+    "totalCalories": 650,
+    "category": "vegetarian",
+    "course": "main",
+    "allergens": [
+      "gluten",
+      "tree nuts"
+    ],
+    "rate": 2.7
+  },
+  {
+    "name": "Vegetable Couscous",
+    "ingredients": [
+      {
+        "name": "Couscous",
+        "calories": 300
+      },
+      {
+        "name": "Mixed Vegetables",
+        "calories": 150
+      },
+      {
+        "name": "Olive Oil",
+        "calories": 100
+      }
+    ],
+    "totalCalories": 550,
+    "category": "vegan",
+    "course": "main",
+    "allergens": [
+      "gluten"
+    ],
+    "rate": 3.3
+  },
+  {
+    "name": "Grilled Steak",
+    "ingredients": [
+      {
+        "name": "Beef",
+        "calories": 500
+      },
+      {
+        "name": "Olive Oil",
+        "calories": 50
+      }
+    ],
+    "totalCalories": 550,
+    "category": "carnivore",
+    "course": "second",
+    "allergens": [],
+    "rate": 2.9
+  },
+  {
+    "name": "Zucchini Omelet",
+    "ingredients": [
+      {
+        "name": "Eggs",
+        "calories": 200
+      },
+      {
+        "name": "Zucchini",
+        "calories": 50
+      },
+      {
+        "name": "Parmesan",
+        "calories": 80
+      }
+    ],
+    "totalCalories": 330,
+    "category": "vegetarian",
+    "course": "second",
+    "allergens": [
+      "eggs",
+      "milk"
+    ],
+    "rate": 2.6
+  },
+  {
+    "name": "Grilled Seitan",
+    "ingredients": [
+      {
+        "name": "Seitan",
+        "calories": 250
+      },
+      {
+        "name": "Grilled Vegetables",
+        "calories": 100
+      },
+      {
+        "name": "Olive Oil",
+        "calories": 50
+      }
+    ],
+    "totalCalories": 400,
+    "category": "vegan",
+    "course": "second",
+    "allergens": [
+      "gluten",
+      "soy"
+    ],
+    "rate": 2.6
+  },
+  {
+    "name": "Salmon Fillet",
+    "ingredients": [
+      {
+        "name": "Salmon",
+        "calories": 400
+      },
+      {
+        "name": "Lemon",
+        "calories": 10
+      },
+      {
+        "name": "Olive Oil",
+        "calories": 50
+      }
+    ],
+    "totalCalories": 460,
+    "category": "pescatarian",
+    "course": "second",
+    "allergens": [
+      "fish"
+    ],
+    "rate": 4.7
+  },
+  {
+    "name": "Stir-Fried Tofu with Vegetables",
+    "ingredients": [
+      {
+        "name": "Tofu",
+        "calories": 200
+      },
+      {
+        "name": "Mixed Vegetables",
+        "calories": 100
+      },
+      {
+        "name": "Soy Sauce",
+        "calories": 50
+      }
+    ],
+    "totalCalories": 370,
+    "category": "vegan",
+    "course": "second",
+    "allergens": [
+      "soy"
+    ],
+    "rate": 4.4
+  },
+  {
+    "name": "Lupin Burger",
+    "ingredients": [
+      {
+        "name": "Lupins",
+        "calories": 250
+      },
+      {
+        "name": "Bread",
+        "calories": 200
+      },
+      {
+        "name": "Fresh Vegetables",
+        "calories": 50
+      }
+    ],
+    "totalCalories": 500,
+    "category": "vegan",
+    "course": "second",
+    "allergens": [
+      "gluten",
+      "lupins"
+    ],
+    "rate": 4.4
+  },
+  {
+    "name": "Hazelnut Cake",
+    "ingredients": [
+      {
+        "name": "Flour",
+        "calories": 300
+      },
+      {
+        "name": "Hazelnuts",
+        "calories": 200
+      },
+      {
+        "name": "Butter",
+        "calories": 150
+      },
+      {
+        "name": "Eggs",
+        "calories": 100
+      }
+    ],
+    "totalCalories": 750,
+    "category": "vegetarian",
+    "course": "dessert",
+    "allergens": [
+      "gluten",
+      "eggs",
+      "milk",
+      "tree nuts"
+    ],
+    "rate": 3.7
+  },
+  {
+    "name": "Fruit Salad",
+    "ingredients": [
+      {
+        "name": "Fresh Fruit",
+        "calories": 150
+      }
+    ],
+    "totalCalories": 150,
+    "category": "vegan",
+    "course": "dessert",
+    "allergens": [],
+    "rate": 3.0
+  },
+  {
+    "name": "Lemon Sorbet",
+    "ingredients": [
+      {
+        "name": "Lemon",
+        "calories": 50
+      },
+      {
+        "name": "Sugar",
+        "calories": 150
+      },
+      {
+        "name": "Sulfur Dioxide",
+        "calories": 0
+      }
+    ],
+    "totalCalories": 200,
+    "category": "vegan",
+    "course": "dessert",
+    "allergens": [
+      "sulfur dioxide and sulfites"
+    ],
+    "rate": 3.7
+  },
+  {
+    "name": "Chocolate Soy Pudding",
+    "ingredients": [
+      {
+        "name": "Soy Milk",
+        "calories": 100
+      },
+      {
+        "name": "Cocoa",
+        "calories": 50
+      },
+      {
+        "name": "Sugar",
+        "calories": 150
+      }
+    ],
+    "totalCalories": 300,
+    "category": "vegan",
+    "course": "dessert",
+    "allergens": [
+      "soy"
+    ],
+    "rate": 4.5
+  },
+  {
+    "name": "Cream Ice Cream",
+    "ingredients": [
+      {
+        "name": "Milk",
+        "calories": 200
+      },
+      {
+        "name": "Eggs",
+        "calories": 100
+      },
+      {
+        "name": "Sugar",
+        "calories": 150
+      }
+    ],
+    "totalCalories": 450,
+    "category": "vegetarian",
+    "course": "dessert",
+    "allergens": [
+      "eggs",
+      "milk"
+    ],
+    "rate": 2.7
+  },
+  {
+    "name": "Sesame Cake",
+    "ingredients": [
+      {
+        "name": "Flour",
+        "calories": 300
+      },
+      {
+        "name": "Sesame Seeds",
+        "calories": 150
+      },
+      {
+        "name": "Sugar",
+        "calories": 100
+      }
+    ],
+    "totalCalories": 550,
+    "category": "vegan",
+    "course": "dessert",
+    "allergens": [
+      "gluten",
+      "sesame seeds"
+    ],
+    "rate": 4.5
+  }
+]
