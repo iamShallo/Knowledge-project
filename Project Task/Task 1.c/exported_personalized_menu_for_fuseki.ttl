@@ -1,0 +1,877 @@
+@prefix : <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#> .
+
+<http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#has_allergen
+:has_allergen rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Dish ;
+              rdfs:range :Allergen .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#has_associated_category
+:has_associated_category rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf owl:topObjectProperty ;
+                         rdfs:domain :Dish ;
+                         rdfs:range :DietCategory .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#has_calories
+:has_calories rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain :Dish ;
+              rdfs:range :Calories .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#has_ingredient
+:has_ingredient rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain :Dish ;
+                rdfs:range :Ingredients .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#has_customer_rate
+:has_customer_rate rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :Dish ;
+                   rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#has_dish_calories
+:has_dish_calories rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain :Dish ;
+                   rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#has_max_calories
+:has_max_calories rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :Calories ;
+                  rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#has_min_calories
+:has_min_calories rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdfs:domain :Calories ;
+                  rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#is_recommended
+:is_recommended rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain :Dish ;
+                rdfs:range xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#rate
+:rate rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#Allergen
+:Allergen rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          rdfs:label "Allergen" .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#Calories
+:Calories rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ;
+          rdfs:label "Calories" .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#Dessert
+:Dessert rdf:type owl:Class ;
+         rdfs:subClassOf :Dish ;
+         rdfs:label "Dessert" .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#DietCategory
+:DietCategory rdf:type owl:Class ;
+              rdfs:subClassOf owl:Thing ;
+              rdfs:label "DietCategory" .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#Dish
+:Dish rdf:type owl:Class ;
+      rdfs:subClassOf owl:Thing ;
+      rdfs:label "Dish" .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#First
+:First rdf:type owl:Class ;
+       rdfs:subClassOf :Dish ;
+       rdfs:label "First" .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#Ingredients
+:Ingredients rdf:type owl:Class ;
+             rdfs:subClassOf owl:Thing ;
+             rdfs:label "Ingredients" .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#Second
+:Second rdf:type owl:Class ;
+        rdfs:subClassOf :Dish ;
+        rdfs:label "Second" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#beef
+:beef rdf:type owl:NamedIndividual ,
+               :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#between_400_and_600
+:between_400_and_600 rdf:type owl:NamedIndividual ,
+                              :Calories ;
+                     :has_max_calories 600 ;
+                     :has_min_calories 400 .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#bread
+:bread rdf:type owl:NamedIndividual ,
+                :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#butter
+:butter rdf:type owl:NamedIndividual ,
+                 :Allergen ,
+                 :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#béchamel_sauce
+:béchamel_sauce rdf:type owl:NamedIndividual ,
+                         :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#carnivore
+:carnivore rdf:type owl:NamedIndividual ,
+                    :DietCategory .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#carrots
+:carrots rdf:type owl:NamedIndividual ,
+                  :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#celery
+:celery rdf:type owl:NamedIndividual ,
+                 :Allergen ,
+                 :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#chocolate_soy_pudding
+:chocolate_soy_pudding rdf:type owl:NamedIndividual ,
+                                :Dessert ,
+                                :Dish ;
+                       :has_allergen :soy ;
+                       :has_associated_category :vegan ;
+                       :has_calories :less_than_400 ;
+                       :has_ingredient :cocoa ,
+                                       :soy_milk ,
+                                       :sugar ;
+                       :has_customer_rate "4.5"^^xsd:float ;
+                       :has_dish_calories 300 ;
+                       :is_recommended "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#clams
+:clams rdf:type owl:NamedIndividual ,
+                :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#cocoa
+:cocoa rdf:type owl:NamedIndividual ,
+                :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#couscous
+:couscous rdf:type owl:NamedIndividual ,
+                   :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#cream_ice_cream
+:cream_ice_cream rdf:type owl:NamedIndividual ,
+                          :Dessert ,
+                          :Dish ;
+                 :has_allergen :eggs ,
+                               :milk ;
+                 :has_associated_category :vegetarian ;
+                 :has_calories :between_400_and_600 ;
+                 :has_ingredient :eggs ,
+                                 :milk ,
+                                 :sugar ;
+                 :has_customer_rate "2.7"^^xsd:float ;
+                 :has_dish_calories 450 .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#egg_pasta
+:egg_pasta rdf:type owl:NamedIndividual ,
+                    :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#eggs
+:eggs rdf:type owl:NamedIndividual ,
+               :Allergen ,
+               :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#fish
+:fish rdf:type owl:NamedIndividual ,
+               :Allergen .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#flour
+:flour rdf:type owl:NamedIndividual ,
+                :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#fresh_fruit
+:fresh_fruit rdf:type owl:NamedIndividual ,
+                      :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#fresh_vegetables
+:fresh_vegetables rdf:type owl:NamedIndividual ,
+                           :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#fruit_salad
+:fruit_salad rdf:type owl:NamedIndividual ,
+                      :Dessert ,
+                      :Dish ;
+             :has_associated_category :vegan ;
+             :has_calories :less_than_400 ;
+             :has_ingredient :fresh_fruit ;
+             :has_customer_rate "3.0"^^xsd:float ;
+             :has_dish_calories 150 .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#gluten
+:gluten rdf:type owl:NamedIndividual ,
+                 :Allergen .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#grilled_seitan
+:grilled_seitan rdf:type owl:NamedIndividual ,
+                         :Dish ,
+                         :Second ;
+                :has_allergen :gluten ,
+                              :soy ;
+                :has_associated_category :vegan ;
+                :has_calories :between_400_and_600 ;
+                :has_ingredient :grilled_vegetables ,
+                                :olive_oil ,
+                                :seitan ;
+                :has_customer_rate "2.6"^^xsd:float ;
+                :has_dish_calories 400 .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#grilled_steak
+:grilled_steak rdf:type owl:NamedIndividual ,
+                        :Dish ,
+                        :Second ;
+               :has_associated_category :carnivore ;
+               :has_calories :between_400_and_600 ;
+               :has_ingredient :beef ,
+                               :olive_oil ;
+               :has_customer_rate "2.9"^^xsd:float ;
+               :has_dish_calories 550 .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#grilled_vegetables
+:grilled_vegetables rdf:type owl:NamedIndividual ,
+                             :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#hazelnut_cake
+:hazelnut_cake rdf:type owl:NamedIndividual ,
+                        :Dessert ,
+                        :Dish ;
+               :has_allergen :butter ,
+                             :eggs ,
+                             :gluten ,
+                             :tree_nuts ;
+               :has_associated_category :vegetarian ;
+               :has_calories :more_than_600 ;
+               :has_ingredient :butter ,
+                               :eggs ,
+                               :flour ,
+                               :hazelnuts ;
+               :has_customer_rate "3.7"^^xsd:float ;
+               :has_dish_calories 750 .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#hazelnuts
+:hazelnuts rdf:type owl:NamedIndividual ,
+                    :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#lasagna_with_meat_sauce
+:lasagna_with_meat_sauce rdf:type owl:NamedIndividual ,
+                                  :Dish ,
+                                  :First ;
+                         :has_allergen :eggs ,
+                                       :gluten ,
+                                       :milk ;
+                         :has_associated_category :carnivore ;
+                         :has_calories :more_than_600 ;
+                         :has_ingredient :béchamel_sauce ,
+                                         :egg_pasta ,
+                                         :meat_sauce ,
+                                         :parmesan ;
+                         :has_customer_rate "4.8"^^xsd:float ;
+                         :has_dish_calories 850 ;
+                         :is_recommended "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#legume_soup
+:legume_soup rdf:type owl:NamedIndividual ,
+                      :Dish ,
+                      :First ;
+             :has_allergen :celery ;
+             :has_associated_category :vegan ;
+             :has_calories :between_400_and_600 ;
+             :has_ingredient :carrots ,
+                             :celery ,
+                             :mixed_legumes ,
+                             :olive_oil ;
+             :has_customer_rate "3.0"^^xsd:float ;
+             :has_dish_calories 430 .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#lemon
+:lemon rdf:type owl:NamedIndividual ,
+                :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#lemon_sorbet
+:lemon_sorbet rdf:type owl:NamedIndividual ,
+                       :Dessert ,
+                       :Dish ;
+              :has_allergen :sulfur_dioxide_and_sulfites ;
+              :has_associated_category :vegan ;
+              :has_calories :less_than_400 ;
+              :has_ingredient :lemon ,
+                              :sugar ,
+                              :sulfur_dioxide ;
+              :has_customer_rate "3.7"^^xsd:float ;
+              :has_dish_calories 200 .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#less_than_400
+:less_than_400 rdf:type owl:NamedIndividual ,
+                        :Calories ;
+               :has_max_calories 399 .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#lupin_burger
+:lupin_burger rdf:type owl:NamedIndividual ,
+                       :Dish ,
+                       :Second ;
+              :has_allergen :gluten ,
+                            :lupins ;
+              :has_associated_category :vegan ;
+              :has_calories :between_400_and_600 ;
+              :has_ingredient :bread ,
+                              :fresh_vegetables ,
+                              :lupins ;
+              :has_customer_rate "4.4"^^xsd:float ;
+              :has_dish_calories 500 ;
+              :is_recommended "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#lupins
+:lupins rdf:type owl:NamedIndividual ,
+                 :Allergen ,
+                 :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#meat_sauce
+:meat_sauce rdf:type owl:NamedIndividual ,
+                     :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#milk
+:milk rdf:type owl:NamedIndividual ,
+               :Allergen ,
+               :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#mixed_legumes
+:mixed_legumes rdf:type owl:NamedIndividual ,
+                        :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#mixed_vegetables
+:mixed_vegetables rdf:type owl:NamedIndividual ,
+                           :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#mollusks
+:mollusks rdf:type owl:NamedIndividual ,
+                   :Allergen .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#more_than_600
+:more_than_600 rdf:type owl:NamedIndividual ,
+                        :Calories ;
+               :has_min_calories 601 .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#olive_oil
+:olive_oil rdf:type owl:NamedIndividual ,
+                    :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#parmesan
+:parmesan rdf:type owl:NamedIndividual ,
+                   :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#parsley
+:parsley rdf:type owl:NamedIndividual ,
+                  :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#pasta
+:pasta rdf:type owl:NamedIndividual ,
+                :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#pasta_with_walnut_pesto
+:pasta_with_walnut_pesto rdf:type owl:NamedIndividual ,
+                                  :Dish ,
+                                  :First ;
+                         :has_allergen :gluten ,
+                                       :tree_nuts ;
+                         :has_associated_category :vegetarian ;
+                         :has_calories :more_than_600 ;
+                         :has_ingredient :olive_oil ,
+                                         :pasta ,
+                                         :walnuts ;
+                         :has_customer_rate "2.7"^^xsd:float ;
+                         :has_dish_calories 650 .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#pescatarian
+:pescatarian rdf:type owl:NamedIndividual ,
+                      :DietCategory .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#pumpkin
+:pumpkin rdf:type owl:NamedIndividual ,
+                  :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#pumpkin_risotto
+:pumpkin_risotto rdf:type owl:NamedIndividual ,
+                          :Dish ,
+                          :First ;
+                 :has_allergen :butter ,
+                               :milk ;
+                 :has_associated_category :vegetarian ;
+                 :has_calories :more_than_600 ;
+                 :has_ingredient :butter ,
+                                 :parmesan ,
+                                 :pumpkin ,
+                                 :rice ;
+                 :has_customer_rate "4.3"^^xsd:float ;
+                 :has_dish_calories 650 ;
+                 :is_recommended "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#rice
+:rice rdf:type owl:NamedIndividual ,
+               :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#salmon
+:salmon rdf:type owl:NamedIndividual ,
+                 :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#salmon_fillet
+:salmon_fillet rdf:type owl:NamedIndividual ,
+                        :Dish ,
+                        :Second ;
+               :has_allergen :fish ;
+               :has_associated_category :pescatarian ;
+               :has_calories :between_400_and_600 ;
+               :has_ingredient :lemon ,
+                               :olive_oil ,
+                               :salmon ;
+               :has_customer_rate "4.7"^^xsd:float ;
+               :has_dish_calories 460 ;
+               :is_recommended "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#seitan
+:seitan rdf:type owl:NamedIndividual ,
+                 :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#sesame_cake
+:sesame_cake rdf:type owl:NamedIndividual ,
+                      :Dessert ,
+                      :Dish ;
+             :has_allergen :gluten ,
+                           :sesame_seeds ;
+             :has_associated_category :vegan ;
+             :has_calories :between_400_and_600 ;
+             :has_ingredient :flour ,
+                             :sesame_seeds ,
+                             :sugar ;
+             :has_customer_rate "4.5"^^xsd:float ;
+             :has_dish_calories 550 ;
+             :is_recommended "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#sesame_seeds
+:sesame_seeds rdf:type owl:NamedIndividual ,
+                       :Allergen ,
+                       :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#soy
+:soy rdf:type owl:NamedIndividual ,
+              :Allergen .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#soy_milk
+:soy_milk rdf:type owl:NamedIndividual ,
+                   :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#soy_sauce
+:soy_sauce rdf:type owl:NamedIndividual ,
+                    :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#spaghetti
+:spaghetti rdf:type owl:NamedIndividual ,
+                    :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#spaghetti_with_clams
+:spaghetti_with_clams rdf:type owl:NamedIndividual ,
+                               :Dish ,
+                               :First ;
+                      :has_allergen :gluten ,
+                                    :mollusks ;
+                      :has_associated_category :pescatarian ;
+                      :has_calories :more_than_600 ;
+                      :has_ingredient :clams ,
+                                      :olive_oil ,
+                                      :parsley ,
+                                      :spaghetti ;
+                      :has_customer_rate "2.7"^^xsd:float ;
+                      :has_dish_calories 610 .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#stir-fried_tofu_with_vegetables
+:stir-fried_tofu_with_vegetables rdf:type owl:NamedIndividual ,
+                                          :Dish ,
+                                          :Second ;
+                                 :has_allergen :soy ;
+                                 :has_associated_category :vegan ;
+                                 :has_calories :less_than_400 ;
+                                 :has_ingredient :mixed_vegetables ,
+                                                 :soy_sauce ,
+                                                 :tofu ;
+                                 :has_customer_rate "4.4"^^xsd:float ;
+                                 :has_dish_calories 370 ;
+                                 :is_recommended "true"^^xsd:boolean .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#sugar
+:sugar rdf:type owl:NamedIndividual ,
+                :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#sulfur_dioxide
+:sulfur_dioxide rdf:type owl:NamedIndividual ,
+                         :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#sulfur_dioxide_and_sulfites
+:sulfur_dioxide_and_sulfites rdf:type owl:NamedIndividual ,
+                                      :Allergen .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#tofu
+:tofu rdf:type owl:NamedIndividual ,
+               :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#tree_nuts
+:tree_nuts rdf:type owl:NamedIndividual ,
+                    :Allergen .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#vegan
+:vegan rdf:type owl:NamedIndividual ,
+                :DietCategory .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#vegetable_couscous
+:vegetable_couscous rdf:type owl:NamedIndividual ,
+                             :Dish ,
+                             :First ;
+                    :has_allergen :gluten ;
+                    :has_associated_category :vegan ;
+                    :has_calories :between_400_and_600 ;
+                    :has_ingredient :couscous ,
+                                    :mixed_vegetables ,
+                                    :olive_oil ;
+                    :has_customer_rate "3.3"^^xsd:float ;
+                    :has_dish_calories 550 .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#vegetarian
+:vegetarian rdf:type owl:NamedIndividual ,
+                     :DietCategory .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#walnuts
+:walnuts rdf:type owl:NamedIndividual ,
+                  :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#zucchini
+:zucchini rdf:type owl:NamedIndividual ,
+                   :Ingredients .
+
+
+###  http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#zucchini_omelet
+:zucchini_omelet rdf:type owl:NamedIndividual ,
+                          :Dish ,
+                          :Second ;
+                 :has_allergen :eggs ,
+                               :milk ;
+                 :has_associated_category :vegetarian ;
+                 :has_calories :less_than_400 ;
+                 :has_ingredient :eggs ,
+                                 :parmesan ,
+                                 :zucchini ;
+                 :has_customer_rate "2.6"^^xsd:float ;
+                 :has_dish_calories 330 .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+:d rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:r rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/d> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/cal> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "if the dish has rating >= 4.5 → recommended dish" ;
+   rdfs:label "raccommended dish" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Dish ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :d
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :has_customer_rate ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :d ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :r
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :r ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 4.2 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :is_recommended ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :d ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> "true"^^xsd:boolean
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Caloric classification “> 600”" ;
+   rdfs:label "over 600" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Dish ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/d>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :has_dish_calories ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/d> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/cal>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/cal> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 600 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :has_calories ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/d> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :more_than_600
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Caloric classification “400 < x < 600”" ;
+   rdfs:label "between 400 and 600" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Dish ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/d>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :has_dish_calories ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/d> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/cal>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/cal> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 400 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThanOrEqual> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/cal> ;
+                                                                                                                                     rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                rdf:first 600 ;
+                                                                                                                                                rdf:rest rdf:nil
+                                                                                                                                              ]
+                                                                                                                                   ]
+                                                                                      ] ;
+                                                                            rdf:rest rdf:nil
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :has_calories ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/d> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :between_400_and_600
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Caloric classification \"< 400\"" ;
+   rdfs:label "less 400" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Dish ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/d>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :has_dish_calories ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/d> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/cal>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThan> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/cal> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 400 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :has_calories ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu/d> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :less_than_400
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

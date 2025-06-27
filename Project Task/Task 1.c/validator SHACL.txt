@@ -37,17 +37,17 @@
   sh:property [
     sh:path :has_associated_category ;
     sh:in ( :vegetarian :carnivore :pescatarian :vegan ) ;
-    sh:minCount 1 ;  # obbligatoria
+    sh:minCount 1 ; 
   ] .
 
 :LabelValidationShape
   a sh:NodeShape ;
-  sh:targetSubjectsOf rdfs:label ;  # Applica la validazione a chi ha rdfs:label
+  sh:targetSubjectsOf rdfs:label ;  
   sh:property [
     sh:path rdfs:label ;
     sh:datatype xsd:string ;
     sh:minLength 3 ;
     sh:maxLength 100 ;
-    sh:pattern "^[a-z].*" ;  # Deve iniziare con lettera maiuscola
-    sh:message "L'etichetta deve iniziare con una lettera maiuscola e avere una lunghezza tra 3 e 100 caratteri." ;
+    sh:pattern "^[a-z].*" ;  
+    sh:message "The label should begin with a capital letter and be between 3 and 100 characters in length." ;
   ] .

@@ -121,8 +121,8 @@ SELECT
   ?rating
 WHERE {
   ?dish a :Dish ;
-        :has_calories :between_400_and_600 ;           # <--- Change here if you want other result
-        :has_associated_category :vegan .              # <--- Change here if you want other result
+        :has_calories :between_400_and_600 ;           
+        :has_associated_category :vegan .              
 
   OPTIONAL { ?dish :has_ingredient ?ingredient . }
   OPTIONAL { ?dish :has_allergen ?allergen . }
@@ -132,7 +132,7 @@ WHERE {
 
   FILTER NOT EXISTS {
     ?dish :has_allergen ?excludedAllergen .
-    FILTER(?excludedAllergen IN (:milk))  # <--- Change here if you want other result
+    FILTER(?excludedAllergen IN (:milk))  
   }
 }
 GROUP BY ?dish ?category ?calories ?rating

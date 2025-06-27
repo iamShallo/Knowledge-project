@@ -1,0 +1,15 @@
+# Caloric Classification: Between 400 and 600}
+
+Dish(?d) ^ has_dish_calories(?d, ?cal) ^ swrlb:greaterThanOrEqual(?cal, 400) ^ swrlb:lessThanOrEqual(?cal, 600) -> has_calories(?d, between_400_and_600)
+
+#Caloric Classification: Less than 400}
+
+Dish(?d) ^ has_dish_calories(?d, ?cal) ^ swrlb:lessThan(?cal, 400) -> has_calories(?d, less_than_400)
+
+#Caloric Classification: Over 600}
+
+Dish(?d) ^ has_dish_calories(?d, ?cal) ^ swrlb:greaterThan(?cal, 600) -> has_calories(?d, more_than_600)
+
+#Recommended Dishes Based on Rating}
+
+Dish(?d) ^ has_customer_rate(?d, ?r) ^ swrlb:greaterThanOrEqual(?r, 4.2) -> is_recommended(?d, true)

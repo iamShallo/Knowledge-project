@@ -1,0 +1,85 @@
+PREFIX mod:  <http://fhnw.ch/modelingEnvironment/ModelOntology#>
+PREFIX lo:   <http://fhnw.ch/modelingEnvironment/LanguageOntology#>
+PREFIX kebi: <http://example.org/restaurant#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+PREFIX :    <http://www.semanticweb.org/kebi/PapaAndCaldarelli/personalizedmenu#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT
+  ?dishName
+  ?category
+  (GROUP_CONCAT(DISTINCT ?ing;   SEPARATOR=", ") AS ?ingredients)
+  (GROUP_CONCAT(DISTINCT ?all;   SEPARATOR=", ") AS ?allergens)
+  ?caloriesValue
+  ?rating
+WHERE {
+  ##################################################################
+  # 0) user parameters
+  ##################################################################
+  mod:SuggestTask_18b92b15-80b1-4c00-8307-57eb15a61823
+        lo:CaloriesConscious ?kcalLit ;
+        lo:DietType          ?catLit ;
+        lo:Allergies         ?allLit .
+
+  ##################################################################
+  # 1) base dish
+  ##################################################################
+  ?dish  rdf:type           :Dish ;
+         :has_dish_calories ?caloriesValue ;
+         :has_customer_rate ?rating .
+
+  ##################################################################
+  # 2) create the IRIs (una volta sole)
+  ##################################################################
+  BIND( IRI(CONCAT(STR(:), ?kcalLit)) AS ?kcalIRI )
+  BIND( IRI(CONCAT(STR(:), ?catLit )) AS ?catIRI  )
+  BIND( IRI(CONCAT(STR(:), ?allLit )) AS ?allIRI  )
+
+  ##################################################################
+  # 3) has_calories constrait
+  ##################################################################
+  FILTER (
+         ?kcalLit = "" || ?kcalLit = "none"
+      || EXISTS { ?dish :has_calories ?kcalIRI }
+  )
+
+  ##################################################################
+  # 4) :has_associated_category constrait
+  ##################################################################
+  FILTER (
+         ?catLit = "" || ?catLit = "none"
+      || EXISTS { ?dish :has_associated_category ?catIRI }
+  )
+
+  ##################################################################
+  # 5) :has_allergen constrait
+  ##################################################################
+  FILTER (
+         ?allLit = "" || ?allLit = "none"
+      || NOT EXISTS { ?dish :has_allergen ?allIRI }
+  )
+
+  ##################################################################
+  # 6) ingredients and allerges
+  ##################################################################
+  OPTIONAL {
+    ?dish :has_ingredient ?ing .
+    BIND( STRAFTER(STR(?ing),  "#") AS ?ingName )
+  }
+  OPTIONAL {
+    ?dish :has_allergen   ?all .
+    BIND( STRAFTER(STR(?all), "#") AS ?allName )
+  }
+
+  ##################################################################
+  # 7) dish name (short)
+  ##################################################################
+  BIND( STRAFTER(STR(?dish), "#") AS ?dishName )
+}
+GROUP BY ?dishName ?category ?caloriesValue ?rating
+ORDER BY ?dishName
+
+
+
+
