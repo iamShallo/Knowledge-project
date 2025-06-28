@@ -44,16 +44,6 @@ The project combines four knowledge representation paradigms:
 - Integration with Jena Fuseki to dynamically query the ontology;
 - Visual process modeling that reacts to semantic data.
 
-## 🌐 SPARQL Integration
-
-The `SuggestTask` is linked to a SPARQL endpoint (Jena Fuseki), which dynamically extracts compatible dishes from the ontology based on:
-
-- `DietType`
-- `CaloriesConscious`
-- `Allergies`
-
-Sample query available in `query.sparql`.
-
 ## 📖 Thesis Context
 
 This project was developed as part of a university thesis focused on the application of knowledge-based approaches to process personalization and semantic reasoning. All methodologies were evaluated from both theoretical and practical perspectives, with a focus on modularity, explainability, and real-world applicability.
